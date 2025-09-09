@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mlg BN GameZone</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0f0f0f;
+      color: #09993a;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 15px 10px;
+    }
+
+  .site-name {
+    font-size: 2rem;
+      font-weight: bold;
+      color: #09993a; /* vert foncé, propre et lisible */
+    }
+
+    .subtitle {
+      margin-top: 10px;
+      font-size: 1rem;
+      color: #cccccc;
+    }
+
+    .green-line {
+      height: 2px;
+      background-color: #09993a;
+      margin: 20px auto;
+      width: 90%;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin: 20px 0 30px;
+    }
+
+    nav a {
+      color: #09993a;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .mission {
+      max-width: 800px;
+      margin: 0 auto 40px;
+      padding: 0 20px;
+      text-align: left;
+    }
+
+    .mission h2 {
+      font-size: 1.4rem;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .mission p {
+      font-size: 1rem;
+      color: #cccccc;
+      line-height: 1.6;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 0.95rem;
+      margin: 40px 0;
+      color: #cccccc;
+    }
+
+    .footer-note strong {
+      color: #09993a;
+    }
+
+    .heart {
+      color: #2ecc71;
+      font-size: 1.2rem;
+      margin-left: 6px;
+    }
+
+    .bottom-line {
+      height: 2px;
+      background-color: #2ecc71;
+      margin: 40px auto 20px;
+      width: 90%;
+    }
+
+    .section {
+      text-align: center;
+      margin-bottom: 40px;
+      padding: 0 15px;
+    }
+
+    .section h3 {
+      color: #09993a;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .section p {
+      font-size: 1rem;
+      color: #cccccc;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="site-name">Mlg BN GameZone</div>
+    <div class="subtitle">Bienvenue sur le site officiel de téléchargement de jeux Android & PPSSPP</div>
+  </header>
+
+  <div class="green-line"></div>
+  
+  <nav>
+    <a href="application.html">Application</a>
+    <a href="android.html">Jeux Android</a>
+    <a href="ppsspp.html">Jeux PPSSPP</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+    
+  </div>
+  
+  <section class="mission">
+    <h2>Notre mission 🎮</h2>
+    <p>
+      Proposer les meilleurs jeux mobiles, accessibles rapidement et sans bug.  
+      On travaille pour que tu télécharges sans stress !
+    </p>
+  </section>
+
+  <div class="footer-note">
+    Créé par deux passionnés du jeu : <strong>B & N</strong> — Brayan & Naya <span class="heart">💛</span>
+  </div>
+  
+ <div class="green-line"></div> 
+  
+</body>
+</html>
+
+<style>
+  .gamezone-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #0a0a0a;
+  }
+  .game-card {
+    background-color: #121212;
+    border: 2px solid #09993a;
+    border-radius: 12px;
+    width: 260px;
+    padding: 20px;
+    color: white;
+    box-shadow: 0 0 12px #09993a88;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .game-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #09993aee;
+  }
+  .game-title {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: #09993a;
+    margin-bottom: 10px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  .game-desc {
+    font-size: 1em;
+    color: #eee;
+    min-height: 60px;
+    margin-bottom: 18px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  .play-button {
+    background-color: #09993a;
+    border: none;
+    padding: 12px 0;
+    color: #0a0a0a;
+    font-weight: 700;
+    font-size: 1em;
+    border-radius: 30px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .play-button:hover {
+    background-color: #07cc3b;
+  }
+  .play-button .tooltip {
+    visibility: hidden;
+    width: 110px;
+    background-color: #333;
+    color: #eee;
+    text-align: center;
+    border-radius: 6px;
+    padding: 6px 8px;
+    position: absolute;
+    bottom: 130%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 0.85em;
+    pointer-events: none;
+    z-index: 10;
+  }
+  .play-button:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+  .poki-icon {
+    width: 20px;
+    height: 20px;
+    filter: drop-shadow(0 0 2px #09993a);
+  }
+  .see-more-container {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+  }
+  .see-more-button {
+    background-color: #09993a;
+    color: #0a0a0a;
+    font-weight: 700;
+    font-size: 1.1em;
+    padding: 8px 80px;
+    border-radius: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: inline-block;
+  }
+  .see-more-button:hover {
+    background-color: #07cc3b;
+  }
+</style>
+
+<div class="gamezone-container">
+
+  <div class="game-card">
+    <div class="game-title">Subway Surfers</div>
+    <div class="game-desc">Course infinie super dynamique</div>
+    <a href="https://poki.com/fr/g/subway-surfers" target="_blank" rel="noopener noreferrer" class="play-button">
+      <img class="poki-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Poki_logo_2022.svg/64px-Poki_logo_2022.svg.png" alt="Poki logo" />
+      Jouer
+      <span class="tooltip">Jouer sur Poki</span>
+    </a>
+  </div>
+
+  <div class="game-card">
+    <div class="game-title">Fireboy and Watergirl</div>
+    <div class="game-desc">Puzzle coop à deux, super fun</div>
+    <a href="https://poki.com/fr/g/fireboy-and-watergirl" target="_blank" rel="noopener noreferrer" class="play-button">
+      <img class="poki-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Poki_logo_2022.svg/64px-Poki_logo_2022.svg.png" alt="Poki logo" />
+      Jouer
+      <span class="tooltip">Jouer sur Poki</span>
+    </a>
+  </div>
+
+  <div class="game-card">
+    <div class="game-title">Moto X3M</div>
+    <div class="game-desc">Parcours moto avec cascades de folie</div>
+    <a href="https://poki.com/fr/g/moto-x3m" target="_blank" rel="noopener noreferrer" class="play-button">
+      <img class="poki-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Poki_logo_2022.svg/64px-Poki_logo_2022.svg.png" alt="Poki logo" />
+      Jouer
+      <span class="tooltip">Jouer sur Poki</span>
+    </a>
+  </div>
+
+  <div class="game-card">
+    <div class="game-title">Basketball Stars</div>
+    <div class="game-desc">Basket arcade pour les pros du shoot</div>
+    <a href="https://poki.com/fr/g/basketball-stars" target="_blank" rel="noopener noreferrer" class="play-button">
+      <img class="poki-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Poki_logo_2022.svg/64px-Poki_logo_2022.svg.png" alt="Poki logo" />
+      Jouer
+      <span class="tooltip">Jouer sur Poki</span>
+    </a>
+  </div>
+
+  <div class="game-card">
+    <div class="game-title">Shell Shockers</div>
+    <div class="game-desc">FPS multijoueur en ligne déjanté</div>
+    <a href="https://poki.com/fr/g/shell-shockers" target="_blank" rel="noopener noreferrer" class="play-button">
+      <img class="poki-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Poki_logo_2022.svg/64px-Poki_logo_2022.svg.png" alt="Poki logo" />
+      Jouer
+      <span class="tooltip">Jouer sur Poki</span>
+    </a>
+  </div>
+
+  <div class="game-card">
+    <div class="game-title">Rooftop Snipers</div>
+    <div class="game-desc">Duel sniper fun et rapide</div>
+    <a href="https://poki.com/fr/g/rooftop-snipers" target="_blank" rel="noopener noreferrer" class="play-button">
+      <img class="poki-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Poki_logo_2022.svg/64px-Poki_logo_2022.svg.png" alt="Poki logo" />
+      Jouer
+      <span class="tooltip">Jouer sur Poki</span>
+    </a>
+  </div>
+
+  <div class="game-card">
+    <div class="game-title">Zombs Royale</div>
+    <div class="game-desc">Battle royale 2D, survie et action</div>
+    <a href="https://poki.com/fr/g/zombs-royale" target="_blank" rel="noopener noreferrer" class="play-button">
+      <img class="poki-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Poki_logo_2022.svg/64px-Poki_logo_2022.svg.png" alt="Poki logo" />
+      Jouer
+      <span class="tooltip">Jouer sur Poki</span>
+    </a>
+  </div>
+
+  <div class="game-card">
+    <div class="game-title">Parking Fury</div>
+    <div class="game-desc">Défis de parking, précision requise</div>
+    <a href="https://poki.com/fr/g/parking-fury" target="_blank" rel="noopener noreferrer" class="play-button">
+      <img class="poki-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Poki_logo_2022.svg/64px-Poki_logo_2022.svg.png" alt="Poki logo" />
+      Jouer
+      <span class="tooltip">Jouer sur Poki</span>
+    </a>
+  </div>
+
+  <div class="game-card">
+    <div class="game-title">Papa’s Freezeria</div>
+    <div class="game-desc">Gestion d’un glacier pour les gourmands</div>
+    <a href="https://poki.com/fr/g/papas-freezeria" target="_blank" rel="noopener noreferrer" class="play-button">
+      <img class="poki-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Poki_logo_2022.svg/64px-Poki_logo_2022.svg.png" alt="Poki logo" />
+      Jouer
+      <span class="tooltip">Jouer sur Poki</span>
+    </a>
+  </div>
+  
+</div>
+
+<div class="see-more-container">
+  <a href="https://poki.com/fr/" target="_blank" rel="noopener noreferrer" class="see-more-button">Voir plus de jeux</a>
+</div>
+
+ <div class="green-line"></div>
+ 
+<section id="gaming-music" style="background-color:#0a0a0a; border-radius:12px; max-width:420px; margin:5px auto; padding:1px; text-align:center;">
+  <h2 style="color:#09993a; font-family:Arial,sans-serif; font-size:1.2em; margin-bottom:10px;">🎧 Musique Gaming</h2>
+
+  <!-- Playlist 1 -->
+  <iframe width="100%" height="100" scrolling="no" frameborder="no" allow="autoplay"
+    src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/ashamaluevmusic/sets/music-for-gaming-videos&color=%2300993a&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false">
+  </iframe>
+  <p style="color:#ccc; font-size:0.85em; margin-top:6px;">Instrumentaux épiques – AShamaluevMusic</p>
+
+  <!-- Bouton Voir plus -->
+  <a href="https://soundcloud.com/ashamaluevmusic/sets/music-for-gaming-videos" target="_blank" rel="noopener noreferrer"
+     style="display:inline-block; margin-top:14px; padding:10px 22px; background-color:#09993a; color:#0a0a0a; font-weight:bold; font-family:Arial,sans-serif; text-decoration:none; border-radius:30px; transition:background-color 0.3s;">
+    🎵 Voir plus de musiques gaming
+  </a>
+</section>
+
+
+<footer style="text-align:center; margin-top:25px; color:#09993a; font-family:Arial,sans-serif; font-size:0.9em; display:flex; flex-direction:column; align-items:center;">
+  <div style="font-size:1.5em;">🎮</div>
+  <div style="margin-top:6px;">Mlg BN GameZone — Créé avec passion par <strong>B. & N.</strong></div>
+</footer>
+

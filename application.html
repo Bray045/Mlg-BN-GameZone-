@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeux Android - Partie 1 | Mlg BN GameZone</title>
+  <style>
+    body {
+      background-color: #0a0a0a;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    section {
+      padding: 30px 15px;
+    }
+    h2 {
+      color: #09993a;
+      text-align: center;
+    }
+    p.description {
+      color: #ccc;
+      text-align: center;
+      font-size: 0.95em;
+    }
+    .card {
+      background: #111;
+      border: 1px solid #09993a;
+      border-radius: 12px;
+      padding: 15px;
+      margin: 20px auto;
+      max-width: 400px;
+    }
+    .card h3 {
+      color: #09993a;
+      margin-bottom: 6px;
+    }
+    .card p {
+      font-size: 0.9em;
+    }
+    .card a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 20px;
+      background-color: #09993a;
+      color: #0a0a0a;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 30px;
+    }
+        
+    quiz, .comments {
+      background-color: #111;
+      padding: 20px;
+      margin: 30px auto;
+      border-radius: 10px;
+      max-width: 600px;
+    }
+    btn-download {
+      background-color: #09993a;
+      color: #0a0a0a;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 10px;
+      text-decoration: none;
+      display: inline-block;
+       margin-top: 15px;
+      font-weight: bold;
+    }
+    .quiz, .comments {
+      background-color: #111;
+      padding: 20px;
+      margin: 30px auto;
+      border-radius: 10px;
+      max-width: 600px;
+    }
+    .quiz h2, .comments h2 {
+      color: #09993a;
+    }
+    .quiz button {
+      margin: 5px;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 10px;
+      background-color: #09993a;
+      color: black;
+      cursor: pointer;
+    }
+    .comment-box {
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      margin-bottom: 10px;
+    }
+    footer {
+      text-align: center;
+      background-color: #111;
+      padding: 10px;
+      font-size: 14px;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h2>🎮 Mlg BN GameZone - Applications</h2>
+  <h2>📱💻 Liste d'applications utiles</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>🟦 PPSSPP</h3>
+      <p>Émulateur PSP rapide et compatible pour Android et PC.</p>
+      <a class="btn" href="https://apkcombo.com/ppsspp/org.ppsspp.ppsspp/">Télécharger</a>
+    </div>
+    <div class="card">
+      <h3>🧩 RetroArch</h3>
+      <p>Un émulateur multi-systèmes (NES, SNES, GBA, etc.).</p>
+      <a class="btn" href="https://apkcombo.com/retroarch/com.retroarch/">Télécharger</a>
+    </div>
+    <div class="card">
+      <h3>🐬 Dolphin</h3>
+      <p>Émulateur GameCube et Wii pour jouer en HD.</p>
+      <a class="btn" href="https://apkcombo.com/dolphin-emulator/org.dolphinemu.dolphinemu/">Télécharger</a>
+    </div>
+    <div class="card">
+      <h3>🦆 DuckStation</h3>
+      <p>Émulateur PlayStation 1 avec graphismes améliorés.</p>
+      <a class="btn" href="https://apkcombo.com/duckstation/com.github.stenzek.duckstation/">Télécharger</a>
+    </div>
+    <div class="card">
+      <h3>🍋 Citra</h3>
+      <p>Émulateur Nintendo 3DS pour PC avec rendu HD.</p>
+      <a class="btn" href="https://apkcombo.com/citra-emulator/org.citra.citra_emu/">Télécharger</a>
+    </div>
+    <div class="card">
+      <h3>🧪 RPCS3</h3>
+      <p>Émulateur PlayStation 3 pour PC (puissant requis).</p>
+      <a class="btn" href="https://apkcombo.com/rpcs3-ps3-emulator/com.rpcs3.ps3/">Télécharger</a>
+    </div>
+    <div class="card">
+      <h3>🟩 Google Play Games PC</h3>
+      <p>Jouer aux jeux Android directement sur Windows.</p>
+      <a class="btn" href="https://apkcombo.com/google-play-games/com.google.android.play.games/">Télécharger</a>
+    </div>
+    <div class="card">
+      <h3>🔥 Steam</h3>
+      <p>Plateforme PC pour acheter et jouer à des jeux.</p>
+      <a class="btn" href="https://store.steampowered.com/">Télécharger</a>
+    </div>
+    <div class="card">
+      <h3>☁️ GeForce NOW</h3>
+      <h3>Service de Cloud Gaming pour jouer sans installation.</h3>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=com.nvidia.geforcenow">Télécharger</a>
+    </div>
+    <div class="card">
+      <h3>🎥 OBS Studio</h3>
+      <p>Logiciel gratuit pour enregistrer et streamer tes jeux.</p>
+      <a class="btn" href="https://obsproject.com/">Télécharger</a>
+    </div>
+    <div class="card">
+      <h3>🗂️ 7-Zip</h3>
+      <p>Outil gratuit pour compresser et extraire des fichiers.</p>
+      <a class="btn" href="https://www.7-zip.org/download.html">Télécharger</a>
+    </div>
+    <div class="card">
+      <h3>📦 ZArchiver</h3>
+      <p>Application Android pour gérer les fichiers compressés.</p>
+      <a class="btn" href="https://apkcombo.com/zarchiver/ru.zdevs.zarchiver/">Télécharger</a>
+    </div>
+    <div class="card">
+      <h3>🎮 KeyMapper</h3>
+      <p>Mapper les touches manette/clavier sur Android.</p>
+      <a class="btn" href="https://apkcombo.com/key-mapper/io.github.sds100.keymapper/">Télécharger</a>
+    </div>
+    <div class="card">
+      <h3>⚙️ MSI Afterburner</h3>
+      <p>Surveillance FPS, température et overclocking GPU.</p>
+      <a class="btn" href="https://www.msi.com/Landing/afterburner">Télécharger</a>
+    </div>
+    <div class="card">
+      <h3>📱 BlueStacks</h3>
+      <p>Émulateur Android populaire pour PC.</p>
+      <a class="btn" href="https://www.bluestacks.com/fr/index.html">Télécharger</a>
+    </div>
+    <div class="card">
+      <h3>🎨 Canva</h3>
+      <p>Outil de design pour créer des miniatures et visuels.</p>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=com.canva.editor">Télécharger</a>
+    </div>
+    <div class="card">
+      <h3>🎧 Spotify</h3>
+      <p>Application pour écouter de la musique en jouant.</p>
+      <a class="btn" href="https://apkcombo.com/spotify-music/com.spotify.music/">Télécharger</a>
+    </div>
+    <div class="card">
+      <h3>📹 Bandicam</h3>
+      <p>Outil simple pour enregistrer tes parties sur PC.</p>
+      <a class="btn" href="https://www.bandicam.com/downloads/">Télécharger</a>
+    </div>
+    <div class="card">
+      <h3>💬 Discord</h3>
+      <p>Application de chat et appels vocaux pour gamers.</p>
+      <a class="btn" href="https://apkcombo.com/discord-chat-talk-hangout/com.discord/">Télécharger</a>
+    </div>
+    <div class="card">
+      <h3>📂 WinRAR</h3>
+      <p>Utilitaire de compression/décompression populaire.</p>
+      <a class="btn" href="https://www.win-rar.com/download.html">Télécharger</a>
+    </div>
+  </div>
+    <div class="card">
+      <h3>Systeme.io</h3>
+      <p>Plateforme tout-en-un pour créer et gérer ton business en ligne</p>
+      <a class="btn" href="https://systeme.io/fr?sa=sa0245048169e5ed8715c8dfa40e13eb082ef2348d">Télécharger</a>
+    </div>
+  </div>
+      <div class="card">
+      <h3>Kinguin</h3>
+      <p>Marketplace pour acheter et vendre des clés de jeux vidéo à prix réduit, avec sécurisation des transactions.</p>
+      <a class="btn" href="https://lowest-prices.eu/a/2k7lDHp235TBpoZ">Télécharger</a>
+    </div>
+  </div>
+      <div class="card">
+      <h3>Gameseal</h3>
+      <p>Site offrant des clés de jeux PC à prix compétitifs, avec livraison instantanée et sécurité des achats.</p>
+      <a class="btn" href="https://savebig.pro/a/31ymVT2x84C2o2q">Télécharger</a>
+    </div>
+  </div>
+  
+  <div style="text-align:center; margin-top:40px;">
+   <a href="index.html" style="display:inline-block; padding:10px 20px; background-color:#09993a; color:#0a0a0a; text-decoration:none; font-weight:bold; border-radius:25px; margin:5px;">⏮ Page Précédente</a>
+  <a href="contact.html" style="display:inline-block; padding:10px 25px; background-color:#09993a; color:#0a0a0a; text-decoration:none; font-weight:bold; border-radius:25px; margin:5px;">Plus...</a>
+  </div>
+  
+  </boby>
+  </html>
