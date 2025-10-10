@@ -7,241 +7,244 @@
      crossorigin="anonymous"></script>
   <title>Jeux Android - Partie 2 | Mlg BN GameZone</title>
   <style>
-    body {
-      background-color: #0a0a0a;
-      font-family: Arial, sans-serif;
-      color: #fff;
-      margin: 0;
-      padding: 0;
-    }
-    section {
-      padding: 30px 15px;
-    }
-    h2 {
-      color: #09993a;
-      text-align: center;
-    }
-    p.description {
-      color: #ccc;
-      text-align: center;
-      font-size: 0.95em;
-    }
-    .game-card {
-      background: #111;
-      border: 1px solid #09993a;
-      border-radius: 12px;
-      padding: 15px;
-      margin: 20px auto;
-      max-width: 400px;
-    }
-    .game-card h3 {
-      color: #09993a;
-      margin-bottom: 6px;
-    }
-    .game-card p {
-      font-size: 0.9em;
-    }
-    .game-card a {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 8px 20px;
-      background-color: #09993a;
-      color: #0a0a0a;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 30px;
-    }
     
-    quiz, .comments {
-      background-color: #111;
-      padding: 20px;
-      margin: 30px auto;
-      border-radius: 10px;
-      max-width: 600px;
-    }
-    btn-download {
-      background-color: #09993a;
-      color: #0a0a0a;
-      padding: 10px 25px;
-      border: none;
-      border-radius: 10px;
-      text-decoration: none;
-      display: inline-block;
-       margin-top: 15px;
-      font-weight: bold;
-    }
-    .quiz, .comments {
-      background-color: #111;
-      padding: 20px;
-      margin: 30px auto;
-      border-radius: 10px;
-      max-width: 600px;
-    }
-    .quiz h2, .comments h2 {
-      color: #09993a;
-    }
-    .quiz button {
-      margin: 5px;
-      padding: 10px 25px;
-      border: none;
-      border-radius: 10px;
-      background-color: #09993a;
-      color: black;
-      cursor: pointer;
-    }
-    .comment-box {
-      width: 100%;
-      padding: 10px;
-      border-radius: 10px;
-      border: none;
-      margin-bottom: 10px;
-    }
-    footer {
-      text-align: center;
-      background-color: #111;
-      padding: 10px;
-      font-size: 14px;
-      color: #ccc;
-    }
-    
-  </style>
-</head>
-<body>
-  <section id="android-games-2">
-    <h2>Mlg BN GameZone jeux Android - Partie 2</h2>
-    <p class="description">Découvre encore 20 autres jeux Android populaires.</p>
+      body {
+        background-color: black;
+        color: #09993a;
+        font-family: Arial Sans-Serif;
+      }
+      h1 {
+        text-align: center;
+      }
+      h2 {
+        color: #09993a;
+        text-align: center;
+      }
+      h3 {
+        text-align: center;
+        color: #09993a;
+      }
+      p {
+        color: white;
+        text-align: center;
+        margin: 0px;
+        padding: 0px;
+        width: 350px;
+      }
+      .button {
+        border: none;
+        border-radius: 15px;
+        background-color: #09993a;
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        display: block;
+        padding: 20px;
+        text-align: center;
+        margin: 15px auto;
+        width: 250px;
+      }
+      .ligne {
+        border: 1px solid #09993a;
+        margin: 15px;
+      }
+    header {
+    background: #111;
+    padding: 15px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+   }
+ .sub-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 10px;
+  background: #141414;
+}
+.sub-categories button {
+  background: #222;
+  color: #fff;
+  border: none;
+  padding: 10px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.sub-categories button.active {
+  background: #09993a;
+}
+.games-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+.game-card {
+  background: #1c1c1c;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+  transition: transform 0.3s;
+}
+.game-card:hover {
+  transform: scale(1.05);
+}
+.game-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.download-btn {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 5px 10px;
+  background: #09993a;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+}
+    </style>
+  </head>
+  <body>
+    <h2> Mlg BN GameZone - Android game</h2>
+    <p> Découvez vos jeux Android entièrement téléchargeable sur des liens sécuriser</p>
+    <div class="ligne"></div>
+    <h3>Nos Catégorie</h3>
+    <p> Découvez vos jeux par Catégorie</p>
+   <div class="ligne"></div>
+   <div class="sub-categories">
+  <button class="sub-btn active" data-sub="sport">⚽ Sport</button>
+  <button class="sub-btn" data-sub="strategie">🧠 Stratégie</button>
+  <button class="sub-btn" data-sub="rpg">🧙 RPG & Monde Ouvert</button>
+  <button class="sub-btn" data-sub="aventure">🧭 Aventure</button>
+  <button class="sub-btn" data-sub="action">⚔️ Action</button>
+  <button class="sub-btn" data-sub="arcade">🕹 Arcade</button>
+  <button class="sub-btn" data-sub="reflexion">🧩 Réflexion</button>
+</div>
 
-    <div class="game-card">
-      <h3>🎮 Critical Ops</h3>
-      <p>FPS tactique multijoueur rapide et compétitif.</p>
-      <a href="https://apkcombo.com/fr/critical-ops/com.criticalforceentertainment.criticalops/" target="_blank">📥 Télécharger</a>
-    </div>
+<div class="games-container" id="games-display"></div>
 
-    <div class="game-card">
-      <h3>🪖 World War Heroes</h3>
-      <p>Combattez en ligne dans des batailles de la Seconde Guerre mondiale.</p>
-      <a href="https://apkcombo.com/fr/world-war-heroes/com.gamedevltd.wwh/" target="_blank">📥 Télécharger</a>
-    </div>
+<script>
+const gamesData = {
+  "sport":[
+    { title:"FIFA Mobile", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/fifa-mobile/com.ea.gp.fifamobile/" },
+    { title:"Dream League Soccer 2024", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/dream-league-soccer-2024/com.firsttouchgames.dls7/" },
+    { title:"Soccer Stars", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/soccer-stars/com.miniclip.soccerstars/" },
+    { title:"Basketball Stars", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/basketball-stars/com.miniclip.basketballstars/" },
+    { title:"8 Ball Pool", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/8-ball-pool/com.miniclip.eightballpool/" },
+    { title:"Golf Clash", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/golf-clash/com.playdemic.golf.android/" },
+    { title:"Head Soccer", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/head-soccer/dnd.and.headsoccer/" },
+    { title:"Table Tennis 3D", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/table-tennis-3d/pingpong.tennis.tabletennis/" },
+    { title:"Bowling King", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/bowling-king/com.pnixgames.bowlingking/" },
+    { title:"Mini Football", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/mini-football/com.miniclip.minifootball/" }
+  ],
+  "strategie":[
+    { title:"Clash of Clans", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/clash-of-clans/com.supercell.clashofclans/" },
+    { title:"Clash Royale", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/clash-royale/com.supercell.clashroyale/" },
+    { title:"Boom Beach", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/boom-beach/com.supercell.boombeach/" },
+    { title:"Mobile Legends", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/mobile-legends/com.mobile.legends/" },
+    { title:"Kingdom Rush", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/kingdom-rush/com.ironhidegames.android.kingdomrush/" },
+    { title:"Plants vs Zombies 2", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/plants-vs-zombies-2/com.ea.game.pvz2_row/" },
+    { title:"Hearthstone", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/hearthstone/com.blizzard.wtcg.hearthstone/" },
+    { title:"Star Wars: Galaxy of Heroes", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/star-wars-galaxy-of-heroes/com.ea.game.starwarscapital_row/" },
+    { title:"Chess Rush", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/chess-rush/com.tencent.chessrush/" },
+    { title:"Lords Mobile", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/lords-mobile/com.igg.android.lords/" }
+  ],
+  "rpg":[
+    { title:"Genshin Impact", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/genshin-impact/com.miHoYo.GenshinImpact/" },
+    { title:"AFK Arena", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/afk-arena/com.lilithgames.hgame.gp/" },
+    { title:"Black Desert Mobile", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/black-desert-mobile/com.pearlabyss.blackdesertm/" },
+    { title:"Summoners War", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/summoners-war/com.com2us.smon.normal.freefull.google.kr.android.common/" },
+    { title:"Raid: Shadow Legends", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/raid-shadow-legends/com.plarium.raidlegends/" },
+    { title:"Lineage 2: Revolution", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/lineage-2-revolution/com.ncsoft.lineage2m/" },
+    { title:"Epic Seven", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/epic-seven/com.smilegate.epicseven.google/" },
+    { title:"Tales of Crestoria", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/tales-of-crestoria/jp.co.bandainamcoent.talescrestoria.android/" },
+    { title:"The Seven Deadly Sins", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/the-seven-deadly-sins/com.netmarble.nanagb/" },
+    { title:"V4", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/v4/com.nexon.v4global/" }
+  ],
+  "aventure":[
+    { title:"Minecraft", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/minecraft/com.mojang.minecraftpe/" },
+    { title:"Terraria", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/terraria/com.and.games505.TerrariaPaid/" },
+    { title:"Don't Starve: Pocket Edition", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/dont-starve-pocket-edition/com.kleientertainment.doNotStarvePocket/" },
+    { title:"Grimvalor", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/grimvalor/com.dreadlocks.grimvalor/" },
+    { title:"Crashlands", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/crashlands/com.butchersoft.crashlands/" },
+    { title:"Oceanhorn", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/oceanhorn/com.fdg.oceanhorn.gp/" },
+    { title:"Ravensword", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/ravensword/com.earthshine.RavenswordShadowlands/" },
+    { title:"Soul Knight", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/soul-knight/com.ChillyRoom.DungeonShooter/" },
+    { title:"The Room: Old Sins", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/the-room-old-sins/com.FireproofStudios.TheRoom4/" },
+    { title:"Evoland 2", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/evoland-2/com.shirogames.evoland2/" }
+  ],
+  "action":[
+  { title:"Call of Duty Mobile", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/call-of-duty-mobile/com.activision.callofduty.shooter/" },
+  { title:"PUBG Mobile", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/pubg-mobile/com.tencent.ig/" },
+  { title:"Garena Free Fire", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/free-fire/com.dts.freefireth/" },
+  { title:"Shadowgun Legends", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/shadowgun-legends/com.madfingergames.legends/" },
+  { title:"Modern Combat 5", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/modern-combat-5/com.gameloft.android.ANMP.GloftM5HM/" },
+  { title:"Dead Trigger 2", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/dead-trigger-2/com.madfingergames.deadtrigger2/" },
+  { title:"Into the Dead 2", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/into-the-dead-2/com.pikpok.dr2/" },
+  { title:"N.O.V.A. Legacy", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/n-o-v-a-legacy/com.gameloft.android.ANMP.GloftNOHM/" },
+  { title:"Gangstar New Orleans", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/gangstar-new-orleans/com.gameloft.android.GloftG5HM/" },
+  { title:"Zombie Frontier 3", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/zombie-frontier-3/com.ftgames.zombiefrontier3/" }
+],
+"arcade":[
+  { title:"Subway Surfers", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/subway-surfers/com.kiloo.subwaysurf/" },
+  { title:"Fireboy and Watergirl", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/fireboy-and-watergirl/com.gameloft.fireboywatergirl/" },
+  { title:"Moto X3M", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/moto-x3m/com.primegames.motox3m/" },
+  { title:"Basketball Stars", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/basketball-stars/com.miniclip.basketballstars/" },
+  { title:"Shell Shockers", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/shell-shockers/com.yendis.games.shellshockers/" },
+  { title:"Rooftop Snipers", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/rooftop-snipers/com.tastypill.rooftopsnipers/" },
+  { title:"Zombs Royale", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/zombs-royale/com.yendis.zombsroyale/" },
+  { title:"Parking Fury", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/parking-fury/com.ramdroid.parkingfury/" },
+  { title:"Papa’s Freezeria", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/papas-freezeria/com.flipline.papasfreezeria/" },
+  { title:"Knife Hit", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/knife-hit/com.ketchapp.knifehit/" }
+],
+"reflexion":[
+  { title:"Brain Out", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/brain-out/com.uncle.arts.brain.out/" },
+  { title:"Flow Free", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/flow-free/com.bigduckgames.flowfree/" },
+  { title:"Monument Valley", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/monument-valley/com.ustwo.monumentvalley/" },
+  { title:"Cut the Rope", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/cut-the-rope/com.zeptolab.ctr.ads/" },
+  { title:"Brain Test", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/brain-test/com.unico.brain.test/" },
+  { title:"The Room", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/the-room/com.fireproofstudios.theroomandroid/" },
+  { title:"Sudoku.com", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/sudoku-com/com.easybrain.sudoku.android/" },
+  { title:"2048", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/2048/com.dropthebit.2048/" },
+  { title:"Brain Test 2", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/brain-test-2/com.unico.brain.test2/" },
+  { title:"Logic Master", img:"https://via.placeholder.com/150", link:"https://apkcombo.com/fr/logic-master/com.logic.master/" }
+],
 
-    <div class="game-card">
-      <h3>🚙 Mad Skills BMX 2</h3>
-      <p>Courses de vélos extrêmes avec des figures spectaculaires.</p>
-      <a href="https://apkcombo.com/fr/mad-skills-bmx-2/com.turborilla.bmx2/" target="_blank">📥 Télécharger</a>
-    </div>
+  // ⚔️ Action, 🕹 Arcade, 🧩 Réflexion à ajouter de la même manière
+};
 
-    <div class="game-card">
-      <h3>🚓 CSR Racing 2</h3>
-      <p>Jeu de drag racing ultra-réaliste.</p>
-      <a href="https://apkcombo.com/fr/csr-racing-2/com.naturalmotion.customstreetracer2/" target="_blank">📥 Télécharger</a>
-    </div>
+// Fonction pour afficher les jeux
+const displayGames = (category) => {
+  const container = document.getElementById("games-display");
+  container.innerHTML = "";
+  gamesData[category].forEach(game => {
+    const card = document.createElement("div");
+    card.classList.add("game-card");
+    card.innerHTML = `
+      <img src="${game.img}" alt="${game.title}">
+      <h3>${game.title}</h3>
+      <a href="${game.link}" target="_blank" class="download-btn">Télécharger</a>
+    `;
+    container.appendChild(card);
+  });
+};
 
-    <div class="game-card">
-      <h3>🧠 Boom Beach</h3>
-      <p>Attaque des bases ennemies sur des îles tropicales.</p>
-      <a href="https://apkcombo.com/fr/boom-beach/com.supercell.boombeach/" target="_blank">📥 Télécharger</a>
-    </div>
+// Affichage initial
+displayGames("sport");
 
-    <div class="game-card">
-      <h3>🏰 Rise of Kingdoms</h3>
-      <p>Stratégie en temps réel avec civilisation historique.</p>
-      <a href="https://apkcombo.com/fr/rise-of-kingdoms/com.lilithgame.roc.gp/" target="_blank">📥 Télécharger</a>
-    </div>
-
-    <div class="game-card">
-      <h3>🧱 Craftsman: Building Craft</h3>
-      <p>Jeu de construction libre en 3D style Minecraft.</p>
-      <a href="https://apkcombo.com/fr/craftsman-building-craft/com.craftsman.go/" target="_blank">📥 Télécharger</a>
-    </div>
-
-    <div class="game-card">
-      <h3>🏗️ Block Craft 3D</h3>
-      <p>Crée ta ville avec des blocs dans ce jeu sandbox créatif.</p>
-      <a href="https://apkcombo.com/fr/block-craft-3d/com.fungames.blockcraft/" target="_blank">📥 Télécharger</a>
-    </div>
-
-    <div class="game-card">
-      <h3>🏀 Basketball Stars</h3>
-      <p>1v1 en ligne avec dunks, tirs à 3 pts et style NBA.</p>
-      <a href="https://apkcombo.com/fr/basketball-stars/com.miniclip.basketballstars/" target="_blank">📥 Télécharger</a>
-    </div>
-
-    <div class="game-card">
-      <h3>🎯 Score! Hero 2</h3>
-      <p>Dirige ta carrière de footballeur en marquant des buts décisifs.</p>
-      <a href="https://apkcombo.com/fr/score-hero-2/com.firsttouchgames.hero2/" target="_blank">📥 Télécharger</a>
-    </div>
-
-    <div class="game-card">
-      <h3>⚽ eFootball 2024</h3>
-      <p>Le football réaliste signé Konami avec clubs officiels.</p>
-      <a href="https://apkcombo.com/fr/efootball-2024/jp.konami.pesam/" target="_blank">📥 Télécharger</a>
-    </div>
-
-    <div class="game-card">
-      <h3>🧙 Dungeon Hunter 5</h3>
-      <p>Hack'n'slash dans un monde heroic fantasy sombre.</p>
-      <a href="https://apkcombo.com/fr/dungeon-hunter-5/com.gameloft.android.ANMP.Gloft5DHM/" target="_blank">📥 Télécharger</a>
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="game-card">
-      <h3>🚀 Infinity Ops</h3>
-      <p>FPS de science-fiction avec armes futuristes.</p>
-      <a href="https://apkcombo.com/fr/infinity-ops/com.gamedevltd.infinityops/" target="_blank">📥 Télécharger</a>
-    </div>
-
-    <div class="game-card">
-      <h3>🔫 Cover Fire</h3>
-      <p>Combat militaire avec missions offline et online.</p>
-      <a href="https://apkcombo.com/fr/cover-fire/com.generagames.resistance/" target="_blank">📥 Télécharger</a>
-    </div>
-
-    <div class="game-card">
-      <h3>🧟 Into the Dead 2</h3>
-      <p>Survis à l'apocalypse zombie avec armes et scénarios variés.</p>
-      <a href="https://apkcombo.com/fr/into-the-dead-2/com.pikpok.dr2.play/" target="_blank">📥 Télécharger</a>
-    </div>
-
-    <div class="game-card">
-      <h3>🏎️ Real Racing 3</h3>
-      <p>Course ultra-réaliste avec voitures sous licence officielle.</p>
-      <a href="https://apkcombo.com/fr/real-racing-3/com.ea.games.r3_row/" target="_blank">📥 Télécharger</a>
-    </div>
-
-    <div class="game-card">
-      <h3>⚽ FC 25 Mobile</h3>
-      <p>La nouvelle génération de football mobile avec clubs et joueurs officiels.</p>
-      <a href="https://apkcombo.com/fr/fc-mobile/com.ea.gp.fcmobile/" target="_blank">📥 Télécharger</a>
-    </div>
-
-    <div class="game-card">
-      <h3>⚡ G-Switch 4</h3>
-      <p>Jeu de course gravitationnelle ultra-rapide et multijoueur.</p>
-      <a href="https://apkcombo.com/fr/g-switch-4/air.com.vasugdf.gswitch4/" target="_blank">📥 Télécharger</a>
-    </div>
-
-    <div class="game-card">
-      <h3>🧩 Monument Valley 2</h3>
-      <p>Explore un monde de puzzles magnifiques avec une ambiance zen.</p>
-      <a href="https://apkcombo.com/fr/monument-valley-2/com.ustwo.monumentvalley2/" target="_blank">📥 Télécharger</a>
-    </div>
-
-    <div class="game-card">
-      <h3>🛹 Skate Space</h3>
-      <p>Skate libre dans un monde ouvert avec figures personnalisées.</p>
-      <a href="https://apkcombo.com/fr/skate-space/jp.co.donuts.skatespace/" target="_blank">📥 Télécharger</a>
-    </div>
-
-<div style="text-align:center; margin-top:40px;">
-      <a href="android.html" style="display:inline-block; padding:10px 25px; background-color:#09993a; color:#0a0a0a; text-decoration:none; font-weight:bold; border-radius:25px; margin:5px"> ⏮ Page Précédente</a>
-   <a href="android3.html" style="display:inline-block; padding:10px 25px; background-color:#09993a; color:#0a0a0a; text-decoration:none; font-weight:bold; border-radius:25px; margin:5px">⏭ Page Suivante</a>
+// Gestion des boutons sous-catégorie
+document.querySelectorAll(".sub-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".sub-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    displayGames(btn.dataset.sub);
+  });
+});
+</script>
       <a href="index.html" style="display:inline-block; padding:10px 25px; background-color:#09993a; color:#0a0a0a; text-decoration:none; font-weight:bold; border-radius:25px; margin:5px;"> Accueil</a>
     </div>
 
