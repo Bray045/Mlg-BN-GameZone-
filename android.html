@@ -7,51 +7,105 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7261622488614329"
      crossorigin="anonymous"></script>
   <style>
-    body {
-      background-color: #0a0a0a;
-      font-family: Arial, sans-serif;
-      color: #fff;
-      margin: 0;
-      padding: 0;
-    }
-    section {
-      padding: 30px 15px;
-    }
-    h2 {
-      color: #09993a;
-      text-align: center;
-    }
-    p.description {
-      color: #ccc;
-      text-align: center;
-      font-size: 0.95em;
-    }
-    .game-card {
-      background: #111;
-      border: 1px solid #09993a;
-      border-radius: 12px;
-      padding: 15px;
-      margin: 20px auto;
-      max-width: 400px;
-    }
-    .game-card h3 {
-      color: #09993a;
-      margin-bottom: 6px;
-    }
-    .game-card p {
-      font-size: 0.9em;
-    }
-    .game-card a {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 8px 20px;
-      background-color: #09993a;
-      color: #0a0a0a;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 30px;
-    }
-        
+    
+     body {
+        background-color: black;
+        color: #09993a;
+        font-family: Arial Sans-Serif;
+      }
+      h1 {
+        text-align: center;
+      }
+      h2 {
+        color: #09993a;
+        text-align: center;
+      }
+      h3 {
+        text-align: center;
+        color: #666;
+      }
+      p {
+        color: white;
+        text-align: center;
+        margin: 0px;
+        padding: 0px;
+        width: 350px;
+      }
+      .button {
+        border: none;
+        border-radius: 15px;
+        background-color: #09993a;
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        display: block;
+        padding: 20px;
+        text-align: center;
+        margin: 15px auto;
+        width: 250px;
+      }
+      .ligne {
+        border: 1px solid #09993a;
+        margin: 15px;
+      }
+    header {
+    background: #111;
+    padding: 15px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+   }
+ .sub-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 10px;
+  background: #141414;
+}
+.sub-categories button {
+  background: #222;
+  color: #fff;
+  border: none;
+  padding: 10px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.sub-categories button.active {
+  background: #09993a;
+}
+.games-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+.game-card {
+  background: #1c1c1c;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+  transition: transform 0.3s;
+}
+.game-card:hover {
+  transform: scale(1.05);
+}
+.game-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.download-btn {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 5px 10px;
+  background: #09993a;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+}   
     quiz, .comments {
       background-color: #111;
       padding: 20px;
@@ -106,141 +160,18 @@
   </style>
 </head>
 <body>
-  <section id="android-games-1">
-    <h2>Mlg BN GameZone jeux Android - Partie 1</h2>
-    <p class="description">Vos jeux Android populaires sont ici découvre celui qui te convient le mieux.</p>
-
-    <!-- Liste des 20 jeux Android -->
-    <div class="game-card">
-      <h3>🔥 Free Fire</h3>
-      <p>Battle Royale rapide et intense.</p>
-      <a href="https://apkcombo.com/fr/free-fire/com.dts.freefireth/" target="_blank">📥 Télécharger</a>
-    </div>
-
-    <div class="game-card">
-      <h3>🔥 PUBG Mobile</h3>
-      <p>Tir tactique avec graphismes réalistes.</p>
-      <a href="https://apkcombo.com/fr/pubg-mobile/com.tencent.ig/" target="_blank">📥 Télécharger</a>
-    </div>
-
-    <div class="game-card">
-      <h3>🔥 Call of Duty Mobile</h3>
-      <p>FPS intense avec plusieurs modes de jeu.</p>
-      <a href="https://apkcombo.com/fr/call-of-duty-mobile/com.activision.callofduty.shooter/" target="_blank">📥 Télécharger</a>
-    </div>
-
-    <div class="game-card">
-      <h3>💀 Modern Combat 5</h3>
-      <p>Combats modernes avec missions solo et multi.</p>
-      <a href="https://apkcombo.com/fr/modern-combat-5/com.gameloft.android.ANMP.GloftM5HM/" target="_blank">📥 Télécharger</a>
-    </div>
-
-    <div class="game-card">
-      <h3>🚗 Asphalt 9: Legends</h3>
-      <p>Course automobile spectaculaire avec nitro !</p>
-      <a href="https://apkcombo.com/fr/asphalt-9/com.gameloft.android.ANMP.GloftA9HM/" target="_blank">📥 Télécharger</a>
-    </div>
-
-    <div class="game-card">
-      <h3>⚽ Dream League Soccer 2024</h3>
-      <p>Jeu de football complet avec mode carrière.</p>
-      <a href="https://apkcombo.com/fr/dream-league/com.firsttouchgames.dls7/" target="_blank">📥 Télécharger</a>
-    </div>
-
-    <div class="game-card">
-      <h3>🧝 Clash of Clans</h3>
-      <p>Construis ton village et défends-le stratégiquement.</p>
-      <a href="https://apkcombo.com/fr/clash-of-clans/com.supercell.clashofclans/" target="_blank">📥 Télécharger</a>
-    </div>
-
-    <div class="game-card">
-      <h3>🤠 Clash Royale</h3>
-      <p>Cartes, stratégie et affrontements rapides.</p>
-      <a href="https://apkcombo.com/fr/clash-royale/com.supercell.clashroyale/" target="_blank">📥 Télécharger</a>
-    </div>
-
-    <div class="game-card">
-      <h3>🫠 Minecraft</h3>
-      <p>Crée ton monde pixelisé en solo ou en ligne.</p>
-      <a href="https://apkcombo.com/fr/minecraft/com.mojang.minecraftpe/" target="_blank">📥 Télécharger</a>
-    </div>
-
-    <div class="game-card">
-      <h3>🚀 Roblox</h3>
-      <p>Plateforme de jeux et de création communautaire.</p>
-      <a href="https://apkcombo.com/fr/roblox/com.roblox.client/" target="_blank">📥 Télécharger</a>
-    </div>
-
-    <div class="game-card">
-      <h3>✨ Genshin Impact</h3>
-      <p>Aventure magique avec des graphismes incroyables.</p>
-      <a href="https://apkcombo.com/fr/genshin-impact/com.miHoYo.GenshinImpact/" target="_blank">📥 Télécharger</a>
-    </div>
-
-    <div class="game-card">
-      <h3>👁 Shadow Fight 4</h3>
-      <p>Combats en ombre avec style et stratégie.</p>
-      <a href="https://apkcombo.com/fr/shadow-fight-arena/com.nekki.shadowfightarena/" target="_blank">📥 Télécharger</a>
-    </div>
-
-    <div class="game-card">
-      <h3>🤼 Soul Knight</h3>
-      <p>Rogue-like d'action dans un monde pixel.</p>
-      <a href="https://apkcombo.com/fr/soul-knight/com.ChillyRoom.DungeonShooter/" target="_blank">📥 Télécharger</a>
-    </div>
-
-    <div class="game-card">
-      <h3>🧯 Plague Inc.</h3>
-      <p>Contamine le monde avec ton virus !</p>
-      <a href="https://apkcombo.com/fr/plague-inc/com.miniclip.plagueinc/" target="_blank">📥 Télécharger</a>
-    </div>
-
-    <div class="game-card">
-      <h3>🪖 Ninja Arashi 2</h3>
-      <p>Ninja déchaîné dans un monde sombre et intense.</p>
-      <a href="https://apkcombo.com/fr/ninja-arashi-2/com.blackpanther.ninjaarashi2/" target="_blank">📥 Télécharger</a>
-    </div>
-
-    <div class="game-card">
-      <h3>🏰 State of Survival</h3>
-      <p>Survis dans un monde rempli de zombies.</p>
-      <a href="https://apkcombo.com/fr/state-of-survival/com.kingsgroup.sos/" target="_blank">📥 Télécharger</a>
-    </div>
-
-    <div class="game-card">
-      <h3>🪴 CarX Drift Racing 2</h3>
-      <p>Simulateur de drift réaliste avec graphismes HD.</p>
-      <a href="https://apkcombo.com/fr/carx-drift-racing-2/com.carxtech.carxdr2/" target="_blank">📥 Télécharger</a>
-    </div>
-
-    <div class="game-card">
-      <h3>🪓 Traffic Rider</h3>
-      <p>Conduite en moto dans la circulation fluide.</p>
-      <a href="https://apkcombo.com/fr/traffic-rider/com.skgames.trafficrider/" target="_blank">📥 Télécharger</a>
-    </div>
-
-    <div class="game-card">
-      <h3>🚗 Rebel Racing</h3>
-      <p>Courses de voitures intenses et réalistes.</p>
-      <a href="https://apkcombo.com/fr/rebel-racing/com.hutchgames.rebelracing/" target="_blank">📥 Télécharger</a>
-    </div>
-    <div class="game-card">
-    <h3>🧟 Zombie Tsunami</h3>
-    <p>Contrôle une horde de zombies et mange les survivants dans ce jeu fun et déjanté.</p>
-    <a href="https://apkcombo.com/fr/zombie-tsunami/net.mobigame.zombietsunami/" target="_blank"9>📥 Télécharger</a>
-  </div>
-
-  <div style="text-align:center; margin-top:40px;">
-   <a href="index.html"  style="display:inline-block; padding:10px 25px; background-color:#09993a; color:#0a0a0a; text-decoration:none; font-weight:bold; border-radius:25px; margin:5px;"> ⏮ Page Précédente</a>
-    <a href="android2.html" style="display:inline-block; padding:10px 25px; background-color:#09993a; color:#0a0a0a; text-decoration:none; font-weight:bold; border-radius:25px; margin:5px;">⏭ Page Suivante</a>
-     <a href="index.html" style="display:inline-block; padding:10px 25px; background-color:#09993a; color:#0a0a0a; text-decoration:none; font-weight:bold; border-radius:25px; margin:5px;"> Accueil</a>
-  </div>
   
- <div class="green-line" style="height: 2px;
-      background-color: #09993a;
-      margin: 50px auto;
-      width: 100%;"></div>
-      
+    <h1> Mlg BN GameZone</h1>
+     <p>Platformes pour jouer et telecharger des jeux vidéos </p>
+    <div class="ligne"></div>
+    <h2> Jeux Android et PC</h2>
+    <p> Découvez vos jeux Android et PC dans un seul endroit</p>
+    <div class="ligne"></div>
+   <a href="android.html" class="button"> Jeux sur Android</a>
+   <h3> Ou alors </h3>
+   <a href="PC.html" class="button"> Jeux sur Pc</a>
+
+
 <div id="quiz-container" style="max-width: 600px; margin: 50px auto; background-color: #111; padding: 20px; border-radius: 10px; color: white;">
   <h2 style="color: #09993a;">Quiz Android – Teste tes connaissances</h2>
   <div id="question" style="margin-top: 20px; font-size: 1.1em;"></div>
