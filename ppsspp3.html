@@ -6,48 +6,106 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7261622488614329"
      crossorigin="anonymous"></script>
   <title>Jeux PPSSPP - Page 3 | Mlg BN GameZone</title>
-  <style>
-    body {
-      background-color: #0a0a0a;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      margin: 0; padding: 0;
-    }
-    h1 {
-      text-align: center;
-      color: #09993a;
-      margin-bottom: 6px;
-    }
-    .game-card {
-      background: #111;
-      border: 1px solid #09993a;
-      border-radius: 12px;
-      padding: 15px;
-      margin: 20px auto;
-      max-width: 400px;
-    }
-    .game-card h3 {
-      margin: 0 0 10px 0;
-      color: #09993a;
-    }
-    .game-card p {
-      font-size: 0.9em;
-      margin: 0 0 10px 0;
-      color: #ddd;
-    }
-    .game-card a {
-      display: inline-block;
-      padding: 8px 20px;
-      background-color: #09993a;
-      color: #0a0a0a;
-      font-weight: bold;
-      border-radius: 30px;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-    }
-    .game-card a:hover {
-      background-color: #07b138;
-    }
+    <style>
+      body {
+        background-color: black;
+        color: #09993a;
+        font-family: Arial Sans-Serif;
+      }
+      h1 {
+        text-align: center;
+      }
+      h2 {
+        color: #09993a;
+        text-align: center;
+      }
+      h3 {
+        text-align: center;
+        color: #09993a;
+      }
+      p {
+        color: white;
+        text-align: center;
+        margin: 0px;
+        padding: 0px;
+        width: 350px;
+      }
+      .button {
+        border: none;
+        border-radius: 15px;
+        background-color: #09993a;
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        display: block;
+        padding: 20px;
+        text-align: center;
+        margin: 15px auto;
+        width: 250px;
+      }
+      .ligne {
+        border: 1px solid #09993a;
+        margin: 15px;
+      }
+     header {
+    background: #111;
+    padding: 15px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+   }
+ .sub-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 10px;
+  background: #141414;
+}
+.sub-categories button {
+  background: #222;
+  color: #fff;
+  border: none;
+  padding: 10px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.sub-categories button.active {
+  background: #09993a;
+}
+.games-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+.game-card {
+  background: #1c1c1c;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+  transition: transform 0.3s;
+}
+.game-card:hover {
+  transform: scale(1.05);
+}
+.game-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.download-btn {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 5px 10px;
+  background: #09993a;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
     .nav-links {
       text-align: center;
       margin-top: 30px;
@@ -94,138 +152,87 @@
       padding: 10px;
       font-size: 14px;
       color: #ccc;
-    } 
-  </style>
-</head>
-<body>
-    <h1>🎮 Jeux PPSSPP - Arcade et Fun</h1>
-    <p style="color:#ccc; text-align: center; font-size: 1em"> découvez à présent vos jeux par catégorie</p>
+    }     
+</style>
+  </head>
+  <body>
+    <h2> Mlg BN GameZone - PPSSPP</h2>
+    <p> Découvez vos jeux PPSSPP et sur autre Emulator téléchargeable ici</p>
+    <div class="ligne"></div>
+    <h3>Nos Catégorie</h3>
+    <p> Découvez vos jeux par Catégorie</p>
+  <div class="ligne"></div>  
+<div class="sub-categories">
+  <button class="sub-btn active" data-sub="sport">⚽ Sport</button>
+  <button class="sub-btn" data-sub="strategie">🧠 Stratégie</button>
+  <button class="sub-btn" data-sub="rpg">🧙 RPG & Monde Ouvert</button>
+  <button class="sub-btn" data-sub="aventure">🧭 Aventure</button>
+  <button class="sub-btn" data-sub="action">⚔️ Action</button>
+  <button class="sub-btn" data-sub="arcade">🕹 Arcade</button>
+  <button class="sub-btn" data-sub="reflexion">🧩 Réflexion</button>
+</div>
 
-        <div class="game-card">
-            <h3> Need for Speed: Most Wanted 5-1-0</h3>
-            <p>Affrontez les meilleurs pilotes et échappez à la police dans ce classique de la course arcade.</p>
-            <a href="https://www.emulatorgames.net/roms/playstation-portable/need-for-speed-most-wanted-5-1-0/" class="download-btn">📥 Télécharger</a>
-        </div>
+<div class="games-container" id="games-display"></div>
 
-        <div class="game-card">
-            <h3>FIFA 14</h3>
-            <p>Vivez l’intensité du football avec des graphismes réalistes et une jouabilité fluide.</p>
-            <a href="https://www.emulatorgames.net/roms/playstation-portable/fifa-14/" class="download-btn">📥 Télécharger</a>
-        </div>
+<script>
+const ppssppGamesData = {
+  "sport":[
+    { title:"FIFA 14", img:"https://via.placeholder.com/150?text=FIFA+14+PSP", link:"https://www.emulatorgames.net/roms/playstation-portable/fifa-14/" },
+    { title:"Pro Evolution Soccer 2013", img:"https://via.placeholder.com/150?text=PES+2013+PSP", link:"https://www.emulatorgames.net/roms/playstation-portable/pro-evolution-soccer-2013/" },
+    { title:"NBA 2K13", img:"https://via.placeholder.com/150?text=NBA+2K13+PSP", link:"https://www.emulatorgames.net/roms/playstation-portable/nba-2k13/" },
+    { title:"Virtua Tennis - World Tour", img:"https://via.placeholder.com/150?text=Virtua+Tennis+PSP", link:"https://www.emulatorgames.net/roms/playstation-portable/virtua-tennis-world-tour/" },
+    { title:"Madden NFL 09", img:"https://via.placeholder.com/150?text=Madden+NFL+09+PSP", link:"https://www.emulatorgames.net/roms/playstation-portable/madden-nfl-09/" },
+    { title:"NBA Street Showdown", img:"https://via.placeholder.com/150?text=NBA+Street+Showdown+PSP", link:"https://www.emulatorgames.net/roms/playstation-portable/nba-street-showdown/" },
+    { title:"NBA 2K12", img:"https://via.placeholder.com/150?text=NBA+2K12+PSP", link:"https://www.emulatorgames.net/roms/playstation-portable/nba-2k12/" },
+    { title:"Madden NFL 13", img:"https://via.placeholder.com/150?text=Madden+NFL+13+PSP", link:"https://www.emulatorgames.net/roms/playstation-portable/madden-nfl-13/" },
+    { title:"NBA Live 10", img:"https://via.placeholder.com/150?text=NBA+Live+10+PSP", link:"https://www.emulatorgames.net/roms/playstation-portable/nba-live-10/" },
+    { title:"Virtua Tennis 4: World Tour Edition", img:"https://via.placeholder.com/150?text=Virtua+Tennis+4+PSP", link:"https://romsfun.com/roms/ps-vita/virtua-tennis-4-world-tour-edition.html" }
+  ],
+  "strategie":[
+    { title:"Civilization Revolution", img:"https://via.placeholder.com/150?text=Civilization+Revolution+PSP", link:"https://www.emulatorgames.net/roms/playstation-portable/civilization-revolution/" },
+    { title:"Disgaea PSP", img:"https://via.placeholder.com/150?text=Disgaea+PSP", link:"https://www.emulatorgames.net/roms/playstation-portable/disgaea/" },
+    { title:"Field Commander", img:"https://via.placeholder.com/150?text=Field+Commander+PSP", link:"https://www.emulatorgames.net/roms/playstation-portable/field-commander/" },
+    { title:"LocoRoco 2", img:"https://via.placeholder.com/150?text=LocoRoco+2+PSP", link:"https://www.emulatorgames.net/roms/playstation-portable/locoroco-2/" },
+    { title:"Patapon 3", img:"https://via.placeholder.com/150?text=Patapon+3+PSP", link:"https://www.emulatorgames.net/roms/playstation-portable/patapon-3/" },
+    { title:"Jeanne d'Arc", img:"https://via.placeholder.com/150?text=Jeanne+dArc+PSP", link:"https://www.emulatorgames.net/roms/playstation-portable/jeanne-darc/" },
+    { title:"Metal Slug XX", img:"https://via.placeholder.com/150?text=Metal+Slug+XX+PSP", link:"https://www.emulatorgames.net/roms/playstation-portable/metal-slug-xx/" },
+    { title:"Tactics Ogre", img:"https://via.placeholder.com/150?text=Tactics+Ogre+PSP", link:"https://www.emulatorgames.net/roms/playstation-portable/tactics-ogre/" },
+    { title:"Final Fantasy Tactics: War of the Lions", img:"https://via.placeholder.com/150?text=FF+Tactics+PSP", link:"https://www.emulatorgames.net/roms/playstation-portable/ff-tactics/" },
+    { title:"Kingdom Hearts: Birth by Sleep", img:"https://via.placeholder.com/150?text=KH+Birth+by+Sleep+PSP", link:"https://www.emulatorgames.net/roms/playstation-portable/kingdom-hearts-bbs/" }
+  ]
+  // Tu pourras ajouter les autres catégories (rpg, aventure, action, arcade, reflexion) de la même manière
+};
 
-        <div class="game-card">
-            <h3> Tony Hawk's Project 8</h3>
-            <p>Révélez vos talents de skateur dans des environnements ouverts et remplis de défis.</p>
-            <a href="https://www.emulatorgames.net/roms/playstation-portable/tony-hawks-project-8/" class="download-btn">📥 Télécharger</a>
-        </div>
+const gamesDisplay = document.getElementById("games-display");
+const buttons = document.querySelectorAll(".sub-btn");
 
-        <div class="game-card">
-            <h3>Dead to Rights: Reckoning</h3>
-            <p>Incarnez Jack Slate dans une aventure d’action et de justice explosive.</p>
-            <a href="https://www.emulatorgames.net/roms/playstation-portable/dead-to-rights-reckoning/" class="download-btn">📥 Télécharger</a>
-        </div>
+function showGames(category) {
+  gamesDisplay.innerHTML = "";
+  ppssppGamesData[category].forEach(game => {
+    const card = document.createElement("div");
+    card.classList.add("game-card");
+    card.innerHTML = `
+      <img src="${game.img}" alt="${game.title}">
+      <div class="game-title">${game.title}</div>
+      <a class="download-btn" href="${game.link}" target="_blank">Télécharger</a>
+    `;
+    gamesDisplay.appendChild(card);
+  });
+}
 
-        <div class="game-card">
-            <h3> Midnight Club 3: DUB Edition</h3>
-            <p>Courses urbaines intenses avec voitures et motos personnalisables.</p>
-            <a href="https://www.emulatorgames.net/roms/playstation-portable/midnight-club-3-dub-edition/" class="download-btn">📥 Télécharger</a>
-        </div>
+// Initial display
+showGames("sport");
 
-        <div class="game-card">
-            <h3> Def Jam: Fight for NY - The Takeover</h3>
-            <p>Combattez pour la gloire dans des affrontements de rue épiques.</p>
-            <a href="https://www.emulatorgames.net/roms/playstation-portable/def-jam-fight-for-ny-the-takeover/" class="download-btn">📥 Télécharger</a>
-        </div>
+// Button click events
+buttons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    buttons.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    showGames(btn.getAttribute("data-sub"));
+  });
+});
+</script>
 
-        <div class="game-card">
-            <h3>NBA Live 10</h3>
-            <p>Affrontez les meilleures équipes NBA avec un gameplay immersif.</p>
-            <a href="https://www.emulatorgames.net/roms/playstation-portable/nba-live-10/" class="download-btn">📥 Télécharger</a>
-        </div>
-
-        <div class="game-card">
-            <h3>Harry Potter and the Half-Blood Prince</h3>
-            <p>Plongez dans la magie et vivez l’histoire du sixième volet de Harry Potter.</p>
-            <a href="https://www.emulatorgames.net/roms/playstation-portable/harry-potter-and-the-half-blood-prince/" class="download-btn">📥 Télécharger</a>
-        </div>
-
-        <div class="game-card">
-            <h3> Dave Mirra BMX Challenge</h3>
-            <p>Montrez vos talents en BMX avec des figures incroyables.</p>
-            <a href="https://www.emulatorgames.net/roms/playstation-portable/dave-mirra-bmx-challenge/" class="download-btn">📥 Télécharger</a>
-        </div>
-
-        <div class="game-card">
-            <h3>Prince of Persia: Rival Swords</h3>
-            <p>Maîtrisez l’art du combat et de l’acrobatie dans un univers oriental fascinant.</p>
-            <a href="https://www.emulatorgames.net/roms/playstation-portable/prince-of-persia-rival-swords/" class="download-btn">📥 Télécharger</a>
-        </div>
-
-        <div class="game-card">
-            <h3> Medal of Honor: Heroes</h3>
-            <p>Combattez sur les champs de bataille de la Seconde Guerre mondiale.</p>
-            <a href="https://www.emulatorgames.net/roms/playstation-portable/medal-of-honor-heroes/" class="download-btn">📥 Télécharger</a>
-        </div>
-
-        <div class="game-card">
-            <h3>️ Cars 2</h3>
-            <p>Rejoignez Flash McQueen et ses amis dans une aventure de course palpitante.</p>
-            <a href="https://www.emulatorgames.net/roms/playstation-portable/cars-2/" class="download-btn">📥 Télécharger</a>
-        </div>
-
-        <div class="game-card">
-            <h3> Syphon Filter: Dark Mirror</h3>
-            <p>Infiltration et action dans une mission secrète intense.</p>
-            <a href="https://www.emulatorgames.net/roms/playstation-portable/syphon-filter-dark-mirror/" class="download-btn">📥 Télécharger</a>
-        </div>
-
-        <div class="game-card">
-            <h3>Star Wars Battlefront: Renegade Squadron</h3>
-            <p>Revivez les batailles épiques de Star Wars sur PSP.</p>
-            <a href="https://www.emulatorgames.net/roms/playstation-portable/star-wars-battlefront-renegade-squadron/" class="download-btn">📥 Télécharger</a>
-        </div>
-
-        <div class="game-card">
-            <h3>SingStar Pop Hits</h3>
-            <p>Chantez vos chansons préférées et devenez la star de la scène.</p>
-            <a href="https://www.emulatorgames.net/roms/playstation-portable/singstar-pop-hits/" class="download-btn">📥 Télécharger</a>
-        </div>
-
-        <div class="game-card">
-            <h3> Spider-Man 3</h3>
-            <p>Balancez-vous dans New York et affrontez vos ennemis.</p>
-            <a href="https://www.emulatorgames.net/roms/playstation-portable/spider-man-3/" class="download-btn">📥 Télécharger</a>
-        </div>
-
-        <div class="game-card">
-            <h3>Gallop Racer</h3>
-            <p>Vivez l’excitation des courses hippiques en compétition.</p>
-            <a href="https://www.emulatorgames.net/roms/playstation-portable/gallop-racer/" class="download-btn">📥 Télécharger</a>
-        </div>
-
-        <div class="game-card">
-            <h3> Ace Combat X: Skies of Deception</h3>
-            <p>Devenez un as du pilotage dans des batailles aériennes spectaculaires.</p>
-            <a href="https://www.emulatorgames.net/roms/playstation-portable/ace-combat-x-skies-of-deception/" class="download-btn">📥 Télécharger</a>
-        </div>
-
-        <div class="game-card">
-            <h3>Batman: The Brave and the Bold</h3>
-            <p>Unissez vos forces avec des super-héros pour vaincre le mal.</p>
-            <a href="https://www.emulatorgames.net/roms/playstation-portable/batman-the-brave-and-the-bold-the-videogame/" class="download-btn">📥 Télécharger</a>
-        </div>
-
-        <div class="game-card">
-            <h3>Monster Hunter Freedom Unite</h3>
-            <p>Partez à la chasse aux monstres dans un univers sauvage.</p>
-            <a href="https://www.emulatorgames.net/roms/playstation-portable/monster-hunter-freedom-unite/" class="download-btn">📥 Télécharger</a>
-        </div>
-
-    </div>
-</section>
-<div style="text-align:center; margin-top:40px;">
-   <a href="ppsspp2.html" style="display:inline-block; padding:10px 20px; background-color:#09993a; color:#0a0a0a; text-decoration:none; font-weight:bold; border-radius:25px; margin:5px;">⏮ Page Précédente</a>
-  <a href="ppsspp4.html" style="display:inline-block; padding:10px 25px; background-color:#09993a; color:#0a0a0a; text-decoration:none; font-weight:bold; border-radius:25px; margin:5px;">⏭ Page suivante</a>
    <a href="index.html" style="display:inline-block; padding:10px 25px; background-color:#09993a; color:#0a0a0a; text-decoration:none; font-weight:bold; border-radius:25px; margin:5px">Accueil</a>
   </div>
   
