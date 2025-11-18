@@ -155,13 +155,10 @@
     }     
 </style>
   </head>
-  <body>
-    <h2> Mlg BN GameZone - PPSSPP</h2>
-    <p> Découvez vos jeux PPSSPP et sur autre Emulator téléchargeable ici</p>
-    <div class="ligne"></div>
-    <h3>Nos Catégorie</h3>
-    <p> Découvez vos jeux par Catégorie</p>
-  <div class="ligne"></div>  
+<body>
+
+<header>🎮 MLG BN GameZone - PPSSPP</header>
+
 <div class="sub-categories">
   <button class="sub-btn active" data-sub="sport">⚽ Sport</button>
   <button class="sub-btn" data-sub="strategie">🧠 Stratégie</button>
@@ -177,30 +174,89 @@
 <script>
 const ppssppGamesData = {
   "sport":[
-    { title:"FIFA 14", img:"https://via.placeholder.com/150?text=FIFA+14+PSP", link:"https://www.emulatorgames.net/roms/playstation-portable/fifa-14/" },
-    { title:"Pro Evolution Soccer 2013", img:"https://via.placeholder.com/150?text=PES+2013+PSP", link:"https://www.emulatorgames.net/roms/playstation-portable/pro-evolution-soccer-2013/" },
-    { title:"NBA 2K13", img:"https://via.placeholder.com/150?text=NBA+2K13+PSP", link:"https://www.emulatorgames.net/roms/playstation-portable/nba-2k13/" },
-    { title:"Virtua Tennis - World Tour", img:"https://via.placeholder.com/150?text=Virtua+Tennis+PSP", link:"https://www.emulatorgames.net/roms/playstation-portable/virtua-tennis-world-tour/" },
-    { title:"Madden NFL 09", img:"https://via.placeholder.com/150?text=Madden+NFL+09+PSP", link:"https://www.emulatorgames.net/roms/playstation-portable/madden-nfl-09/" },
-    { title:"NBA Street Showdown", img:"https://via.placeholder.com/150?text=NBA+Street+Showdown+PSP", link:"https://www.emulatorgames.net/roms/playstation-portable/nba-street-showdown/" },
-    { title:"NBA 2K12", img:"https://via.placeholder.com/150?text=NBA+2K12+PSP", link:"https://www.emulatorgames.net/roms/playstation-portable/nba-2k12/" },
-    { title:"Madden NFL 13", img:"https://via.placeholder.com/150?text=Madden+NFL+13+PSP", link:"https://www.emulatorgames.net/roms/playstation-portable/madden-nfl-13/" },
-    { title:"NBA Live 10", img:"https://via.placeholder.com/150?text=NBA+Live+10+PSP", link:"https://www.emulatorgames.net/roms/playstation-portable/nba-live-10/" },
-    { title:"Virtua Tennis 4: World Tour Edition", img:"https://via.placeholder.com/150?text=Virtua+Tennis+4+PSP", link:"https://romsfun.com/roms/ps-vita/virtua-tennis-4-world-tour-edition.html" }
+    { title:"FIFA 14", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/fifa-14/" },
+    { title:"Pro Evolution Soccer 2013", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/pes-2013/" },
+    { title:"NBA 2K14", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/nba-2k14/" },
+    { title:"Virtua Tennis 4", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/virtua-tennis-4/" },
+    { title:"Madden NFL 13", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/madden-nfl-13/" },
+    { title:"Top Spin 4", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/top-spin-4/" },
+    { title:"MLB 2K13", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/mlb-2k13/" },
+    { title:"Tiger Woods PGA Tour 14", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/tiger-woods-pga-tour-14/" },
+    { title:"FIFA 13", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/fifa-13/" },
+    { title:"NBA Live 14", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/nba-live-14/" }
   ],
   "strategie":[
-    { title:"Civilization Revolution", img:"https://via.placeholder.com/150?text=Civilization+Revolution+PSP", link:"https://www.emulatorgames.net/roms/playstation-portable/civilization-revolution/" },
-    { title:"Disgaea PSP", img:"https://via.placeholder.com/150?text=Disgaea+PSP", link:"https://www.emulatorgames.net/roms/playstation-portable/disgaea/" },
-    { title:"Field Commander", img:"https://via.placeholder.com/150?text=Field+Commander+PSP", link:"https://www.emulatorgames.net/roms/playstation-portable/field-commander/" },
-    { title:"LocoRoco 2", img:"https://via.placeholder.com/150?text=LocoRoco+2+PSP", link:"https://www.emulatorgames.net/roms/playstation-portable/locoroco-2/" },
-    { title:"Patapon 3", img:"https://via.placeholder.com/150?text=Patapon+3+PSP", link:"https://www.emulatorgames.net/roms/playstation-portable/patapon-3/" },
-    { title:"Jeanne d'Arc", img:"https://via.placeholder.com/150?text=Jeanne+dArc+PSP", link:"https://www.emulatorgames.net/roms/playstation-portable/jeanne-darc/" },
-    { title:"Metal Slug XX", img:"https://via.placeholder.com/150?text=Metal+Slug+XX+PSP", link:"https://www.emulatorgames.net/roms/playstation-portable/metal-slug-xx/" },
-    { title:"Tactics Ogre", img:"https://via.placeholder.com/150?text=Tactics+Ogre+PSP", link:"https://www.emulatorgames.net/roms/playstation-portable/tactics-ogre/" },
-    { title:"Final Fantasy Tactics: War of the Lions", img:"https://via.placeholder.com/150?text=FF+Tactics+PSP", link:"https://www.emulatorgames.net/roms/playstation-portable/ff-tactics/" },
-    { title:"Kingdom Hearts: Birth by Sleep", img:"https://via.placeholder.com/150?text=KH+Birth+by+Sleep+PSP", link:"https://www.emulatorgames.net/roms/playstation-portable/kingdom-hearts-bbs/" }
+    { title:"Civilization Revolution", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/civilization-revolution/" },
+    { title:"Disgaea PSP", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/disgaea/" },
+    { title:"Field Commander", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/field-commander/" },
+    { title:"LocoRoco 2", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/locoroco-2/" },
+    { title:"Patapon 3", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/patapon-3/" },
+    { title:"Jeanne d'Arc", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/jeanne-darc/" },
+    { title:"Metal Slug XX", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/metal-slug-xx/" },
+    { title:"Tactics Ogre", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/tactics-ogre/" },
+    { title:"Final Fantasy Tactics: The War of the Lions", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/ff-tactics/" },
+    { title:"Kingdom Hearts: Birth by Sleep", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/kingdom-hearts-bbs/" }
+  ],
+  "rpg":[
+    { title:"The Elder Scrolls: Oblivion PSP", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/oblivion/" },
+    { title:"Monster Hunter Freedom Unite", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/monster-hunter-freedom-unite/" },
+    { title:"Final Fantasy VII: Crisis Core", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/ffvii-crisis-core/" },
+    { title:"Persona 3 Portable", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/persona-3-portable/" },
+    { title:"Ys Seven", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/ys-seven/" },
+    { title:"Star Ocean: Second Evolution", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/star-ocean-se/" },
+    { title:"Shin Megami Tensei: Persona 2", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/persona-2/" },
+    { title:"Tales of Eternia PSP", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/tales-of-eternia/" },
+    { title:"Kingdom Hearts: Re:coded", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/kingdom-hearts-recoded/" },
+    { title:"Lunar: Silver Star Harmony", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/lunar-ssh/" }
+  ],
+  "aventure":[
+    { title:"God of War: Chains of Olympus", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/god-of-war-cop/" },
+    { title:"God of War: Ghost of Sparta", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/god-of-war-gos/" },
+    { title:"Tomb Raider: Legend PSP", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/tomb-raider-legend/" },
+    { title:"Tomb Raider: Anniversary PSP", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/tomb-raider-anniversary/" },
+    { title:"Prince of Persia: Rival Swords", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/prince-of-persia-rival-swords/" },
+    { title:"Daxter", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/daxter/" },
+    { title:"Syphon Filter: Dark Mirror", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/syphon-filter-dark-mirror/" },
+    { title:"Syphon Filter: Logan’s Shadow", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/syphon-filter-logans-shadow/" },
+    { title:"LocoRoco", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/locoroco/" },
+    { title:"Patapon", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/patapon/" }
+  ],
+  "action":[
+    { title:"Metal Gear Solid: Peace Walker", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/metal-gear-solid-peace-walker/" },
+    { title:"Monster Hunter Portable 3rd", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/monster-hunter-portable-3rd/" },
+    { title:"Resistance: Retribution", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/resistance-retribution/" },
+    { title:"Killzone: Liberation", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/killzone-liberation/" },
+    { title:"Crisis Core: Final Fantasy VII", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/ffvii-crisis-core/" },
+    { title:"Daxter", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/daxter/" },
+    { title:"Castlevania: The Dracula X Chronicles", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/castlevania-dracula-x-chronicles/" },
+    { title:"God of War: Chains of Olympus", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/god-of-war-cop/" },
+    { title:"God of War: Ghost of Sparta", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/god-of-war-gos/" },
+    { title:"Patapon 3", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/patapon-3/" }
+  ],
+  "arcade":[
+    { title:"Tekken: Dark Resurrection", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/tekken-dark-resurrection/" },
+    { title:"Street Fighter Alpha 3 MAX", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/street-fighter-alpha-3-max/" },
+    { title:"Virtua Fighter 4: Evolution", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/virtua-fighter-4-evolution/" },
+    { title:"Soulcalibur: Broken Destiny", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/soulcalibur-broken-destiny/" },
+    { title:"King of Fighters: Maximum Impact", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/kof-maximum-impact/" },
+    { title:"Power Stone Collection", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/power-stone-collection/" },
+    { title:"Street Fighter EX3", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/street-fighter-ex3/" },
+    { title:"Puzzle Bobble Universe", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/puzzle-bobble-universe/" },
+    { title:"Pac-Man World 3", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/pac-man-world-3/" },
+    { title:"Crazy Taxi", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/crazy-taxi/" }
+  ],
+  "reflexion":[
+    { title:"Lumines", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/lumines/" },
+    { title:"LocoRoco", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/locoroco/" },
+    { title:"LocoRoco 2", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/locoroco-2/" },
+    { title:"Patapon", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/patapon/" },
+    { title:"Patapon 2", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/patapon-2/" },
+    { title:"Echochrome", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/echochrome/" },
+    { title:"Exit", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/exit/" },
+    { title:"Intelligent Qube", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/intelligent-qube/" },
+    { title:"Mister Slime", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/mister-slime/" },
+    { title:"Gurumin: A Monstrous Adventure", img:"https://via.placeholder.com/150", link:"https://www.emulatorgames.net/psp/gurumin/" }
   ]
-  // Tu pourras ajouter les autres catégories (rpg, aventure, action, arcade, reflexion) de la même manière
 };
 
 const gamesDisplay = document.getElementById("games-display");
@@ -233,59 +289,5 @@ buttons.forEach(btn => {
 });
 </script>
 
-   <a href="index.html" style="display:inline-block; padding:10px 25px; background-color:#09993a; color:#0a0a0a; text-decoration:none; font-weight:bold; border-radius:25px; margin:5px">Accueil</a>
-  </div>
-  
- <div class="quiz">
-  <h2>🧠 Quiz connais tu assez bien les jeux ppsspp </h2>
-  <div id="quiz3"></div>
-  <div id="result3" class="result" ></div>
-</div>
-
-<script>
-const quizData3 = [
-  { question: "Quel est le format des jeux PPSSPP ?", options: ["APK", "ISO/CSO", "EXE"], answer: 1 },
-  { question: "Quel appareil utilise l'émulateur PPSSPP ?", options: ["PlayStation Portable", "Xbox", "Nintendo Switch"], answer: 0 },
-  { question: "Que signifie PPSSPP ?", options: [ "Pro Play Station Support Program", "Portable Player Software", "PlayStation Portable Simulator Suitable for Playing Portably"], answer: 2 },
-  { question: "Sur quel OS peut-on installer PPSSPP ?", options: ["Android et PC", "Android uniquement", "PC uniquement"], answer: 0 },
-  { question: "Quel est l'avantage principal de PPSSPP ?", options: ["Réduire la taille des jeux","Améliorer les graphismes", "Jouer sans batterie"], answer: 1 }
-];
-
-let currentQuestion3 = 0;
-let score3 = 0;
-
-function loadQuestion3() {
-  if (currentQuestion3 < quizData3.length) {
-    let q = quizData3[currentQuestion3];
-    document.getElementById("quiz3").innerHTML = `
-      <h3>${q.question}</h3>
-      ${q.options.map((opt, i) => `<button class='quiz-btn' onclick="selectAnswer3(${i})">${opt}</button>`).join("")}
-    `;
-  } else {
-    document.getElementById("quiz3").innerHTML = "";
-    document.getElementById("result3").innerHTML = `🎉 Score : ${score3} / ${quizData3.length}`;
-  }
-}
-
-function selectAnswer3(i) {
-  if (i === quizData3[currentQuestion3].answer) {
-    score3++;
-  }
-  currentQuestion3++;
-  loadQuestion3();
-}
-
-loadQuestion3();
-</script>
- 
- <div class="comments">
-      <h2>💬 Laisse un commentaire</h2>
-      <textarea class="comment-box" rows="2" placeholder="Écris ton avis ici..."></textarea><br>
-      <button class="btn-download" style="background-color: #09993a; color: #000; padding: 10px 25px; border: none; border-radius: 10px;">Envoyer</button>
-    </div>
-     
-    <footer>
-    <p>&copy; 2025 Mlg BN GameZone - Tous droits réservés</p>
-  </footer> 
 </body>
 </html>
