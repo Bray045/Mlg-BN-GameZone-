@@ -74,9 +74,10 @@
     .mini-jeux-cadre { color: white; display: flex;
       justify-content: center; gap: 20px; align-items: center; padding: 10px;
     }
-    .mini-jeux { background: #1a0a3a; font-size: 16px;
+    .mini-jeux { background: #111; font-size: 16px;
       border-radius: 10px; height: 90px; width: 90px;
       display: flex; align-items: center; justify-content: center;
+      border: 1px solid white;
     }
     footer { color: white; text-align: center; }
   </style>
@@ -114,29 +115,233 @@
   </div>
 
   <div class="bouton-cadre">
-    <a href="jouer.html" class="bouton">Jouer online</a>
+    <a href="jeux.html" class="bouton">Jouer online</a>
     <a href="android.html" class="bouton">Jeux</a>
-    <a href="ppsspp.html" class="bouton">Application</a>
+    <a href="application.html" class="bouton">Application</a>
   </div>
 
   <h2 style="text-align: center; color: #0099ff; text-shadow: 0 0 10px #0099ff; padding:10px;">
     Mini jeux
   </h2>
-  <div class="mini-jeux-cadre">
-<div class="mini-jeux" onclick="openPopup('tictactoe-popup')">Tic Tac Toe</div>
-<div class="mini-jeux" onclick="openPopup('snake-popup')">Snake</div>
+
+<style>
+body {margin:0;font-family:Arial,sans-serif;background:#0d0d0d;color:#fff;}
+h1{text-align:center;margin:10px 0;}
+.games-grid{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:15px;}
+.game-card{width:150px;height:90px;background:#111;display:flex;align-items:center;justify-content:center;border-radius:10px;cursor:pointer;border:1px solid #333;transition:0.2s;}
+.game-card:hover{transform:scale(1.05);background:#222;}
+#overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);z-index:999;align-items:center;justify-content:center;padding:10px;}
+.panel{width:100%;height:100%;max-width:1200px;max-height:900px;background:#070707;border-radius:10px;padding:10px;position:relative;display:flex;flex-direction:column;}
+.close-btn{position:absolute;right:10px;top:10px;background:#e74c3c;color:#fff;border:none;width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:18px;}
+.reload-btn{background:#222;border:none;color:#fff;padding:8px 12px;border-radius:8px;cursor:pointer;}
+.toolbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;}
+.title{font-size:18px;}
+.game-area{flex:1;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;border-radius:6px;}
+.game-box{display:none;width:100%;height:100%;position:relative;}
+.status{text-align:center;color:#ccc;margin-top:6px;}
+/* Tic Tac Toe */
+#tt-board{width:360px;max-width:90%;margin:12px auto;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.tt-cell{background:#111;height:110px;display:flex;align-items:center;justify-content:center;font-size:56px;cursor:pointer;border-radius:8px;}
+.tt-info{display:flex;justify-content:space-between;margin:5px 10px;font-size:16px;}
+/* Memory */
+#memoryGrid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;width:100%;max-width:920px;margin:10px auto;}
+.mem-card{background:#111;height:100px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:40px;cursor:pointer;user-select:none;transition:0.2s;}
+@media (max-width:920px){#memoryGrid{grid-template-columns:repeat(4,1fr)}.tt-cell{height:84px;font-size:40px;}}
+</style>
+
+<div class="mini-jeux-cadre">
+  <div class="mini-jeux" onclick="openGame('tictactoe')">Tic Tac Toe</div>
+  <div class="mini-jeux" onclick="openGame('pong')">Pong</div>
+</div>
+<div class="mini-jeux-cadre">
+  <div class="mini-jeux" onclick="openGame('snake')">Snake</div>
+  <div class="mini-jeux" onclick="openGame('memory')">Memory cartes</div>
 </div>
 
-  <div class="mini-jeux-cadre">
-    <div class="mini-jeux" onclick="openPopup('memory-popup')">Memory</div>
-  <div class="mini-jeux" onclick="openPopup('flappy-popup')">Flappy</div>
+<div id="overlay">
+  <div class="panel">
+    <button class="close-btn" onclick="closeGame()">✖</button>
+    <div class="toolbar">
+      <div class="title" id="gameTitle">—</div>
+      <button class="reload-btn" onclick="restartCurrent()">🔄 Recommencer</button>
+    </div>
+    <div class="game-area">
+      <!-- Tic Tac Toe -->
+      <div id="tictactoe" class="game-box"></div>
+      <!-- Pong -->
+      <div id="pong" class="game-box" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
+        <canvas id="pongCanvas" style="background:#000;border-radius:6px;max-width:100%;"></canvas>
+        <div style="display:flex;justify-content:space-between;width:100%;max-width:720px;margin-top:6px;color:#ddd;">
+          <div>Toi: <span id="pong-score-player">0</span></div>
+          <div id="pong-status">Premier à 5 gagne</div>
+          <div>IA: <span id="pong-score-ai">0</span></div>
+        </div>
+      </div>
+      <!-- Snake -->
+      <div id="snake" class="game-box" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
+        <canvas id="snakeCanvas" style="border-radius:6px;max-width:100%;"></canvas>
+        <div style="margin-top:8px;color:#ddd;">Score: <span id="snake-score">0</span></div>
+      </div>
+      <!-- Memory -->
+      <div id="memory" class="game-box" style="padding:8px 12px;overflow:auto">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;color:#ddd">
+          <div>Essais: <span id="mem-attempts">0</span></div>
+          <div>Paires: <span id="mem-matches">0</span>/10</div>
+        </div>
+        <div id="memoryGrid"></div>
+        <div class="status" id="mem-status"></div>
+      </div>
+    </div>
   </div>
+</div>
 
+<script>
+/* ---------- UTIL ---------- */
+const overlay = document.getElementById('overlay');
+let currentGame=null;
+function openGame(name){
+  stopAll();
+  currentGame=name;
+  document.getElementById('gameTitle').textContent=name.toUpperCase();
+  document.querySelectorAll('.game-box').forEach(b=>b.style.display='none');
+  document.getElementById(name).style.display='block';
+  overlay.style.display='flex';
+  setTimeout(()=>{
+    if(name==='tictactoe') initTic();
+    if(name==='pong') initPong();
+    if(name==='snake') initSnake();
+    if(name==='memory') initMemory();
+  },50);
+}
+function closeGame(){overlay.style.display='none';stopAll();currentGame=null;}
+function restartCurrent(){if(!currentGame) return; if(currentGame==='tictactoe') initTic(true); if(currentGame==='pong') initPong(true); if(currentGame==='snake') initSnake(true); if(currentGame==='memory') initMemory(true);}
+function stopAll(){if(window._pongRAF) cancelAnimationFrame(window._pongRAF);if(window._snakeInterval) clearInterval(window._snakeInterval);document.onmousemove=null;document.onclick=null;document.ontouchstart=null;document.onkeydown=null;pongRunning=false;snakeRunning=false;}
+
+/* ---------------- TIC TAC TOE ---------------- */
+let tt={scoreX:0,scoreO:0,turn:'X',locked:false,cells:[]};
+function initTic(resetScores=false){
+  if(resetScores){tt.scoreX=0;tt.scoreO=0;}
+  tt.turn='X';tt.locked=false;
+  document.getElementById('tictactoe').innerHTML='';
+  const board=document.getElementById('tictactoe');
+  board.innerHTML=`<div class="tt-info">
+    <div>X: <span id="tt-score-x">${tt.scoreX}</span></div>
+    <div id="tt-turn">Tour: X</div>
+    <div>O: <span id="tt-score-o">${tt.scoreO}</span></div>
+  </div>
+  <div id="tt-board"></div>
+  <div class="status" id="tt-status"></div>`;
+  tt.cells=[];
+  const ttboard=document.getElementById('tt-board');
+  for(let i=0;i<9;i++){
+    const c=document.createElement('div');c.className='tt-cell';c.textContent='';
+    c.onclick=()=>{if(tt.locked || c.textContent!=='') return;c.textContent=tt.turn;if(checkTic()){tt.locked=true;if(tt.turn==='X'){tt.scoreX++;document.getElementById('tt-score-x').textContent=tt.scoreX;}else{tt.scoreO++;document.getElementById('tt-score-o').textContent=tt.scoreO;}document.getElementById('tt-status').textContent=`🎉 ${tt.turn} a gagné !`;} else if(tt.cells.every(x=>x.textContent!=='')){tt.locked=true;document.getElementById('tt-status').textContent='Match nul.';}else{tt.turn=tt.turn==='X'?'O':'X';document.getElementById('tt-turn').textContent='Tour: '+tt.turn;}};ttboard.appendChild(c);tt.cells.push(c);}
+}
+function checkTic(){const s=tt.cells.map(c=>c.textContent||'');const wins=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];return wins.some(([a,b,c])=>s[a]&&s[a]===s[b]&&s[b]===s[c]);}
+
+/* ---------------- PONG ---------------- */
+let pong={},pongRunning=false;
+function initPong(reset=false){
+  stopAll();
+  if(reset||!pong.initialized){pong={playerScore:0,aiScore:0,maxScore:5,paddleY:160,aiY:160,ballX:360,ballY:210,vx:6,vy:3,speedInc:0.1};pong.initialized=true;}
+  updatePongUI();
+  const canvas=document.getElementById('pongCanvas');fitCanvas(canvas,0.92,0.7);
+  canvas.onmousemove=e=>{const r=canvas.getBoundingClientRect();pong.paddleY=e.clientY-r.top-40;}
+  pongRunning=true;requestAnimationFrame(pongLoop);
+}
+function updatePongUI(){document.getElementById('pong-score-player').textContent=pong.playerScore;document.getElementById('pong-score-ai').textContent=pong.aiScore;document.getElementById('pong-status').textContent=`Premier à ${pong.maxScore} gagne`;}
+function resetBall(towardsAI){const canvas=document.getElementById('pongCanvas');pong.ballX=canvas.width/2;pong.ballY=canvas.height/2;pong.vx=(towardsAI?6:-6)*(Math.random()>0.5?1:-1);pong.vy=(Math.random()*2-1)*3;}
+function pongLoop(){
+  if(!pongRunning) return;
+  const canvas=document.getElementById('pongCanvas');const ctx=canvas.getContext('2d');ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.fillStyle='#111';ctx.fillRect(canvas.width/2-2,0,4,canvas.height);
+  ctx.fillStyle='#fff';
+  ctx.fillRect(20,clamp(pong.paddleY,0,canvas.height-80),12,80);
+  ctx.fillRect(canvas.width-32,clamp(pong.aiY,0,canvas.height-80),12,80);
+  ctx.beginPath();ctx.arc(pong.ballX,pong.ballY,9,0,Math.PI*2);ctx.fill();
+  pong.ballX+=pong.vx;pong.ballY+=pong.vy;
+  if(pong.ballY<9||pong.ballY>canvas.height-9)pong.vy*=-1;
+  if(pong.ballX<40&&pong.ballX>20){if(pong.ballY>pong.paddleY&&pong.ballY<pong.paddleY+80){pong.vx=Math.abs(pong.vx)+pong.speedInc;pong.ballX=40;}}
+  if(pong.ballX>canvas.width-40&&pong.ballX<canvas.width-20){if(pong.ballY>pong.aiY&&pong.ballY<pong.aiY+80){pong.vx=-Math.abs(pong.vx)-pong.speedInc;pong.ballX=canvas.width-40;}}
+  if(pong.ballX<0){pong.aiScore++;updatePongUI();resetBall(true);} else if(pong.ballX>canvas.width){pong.playerScore++;updatePongUI();resetBall(false);}
+  const aiCenter=pong.aiY+40;const diff=pong.ballY-aiCenter;const maxAI=clamp(2+pong.playerScore*0.1,1,4);if(Math.abs(diff)>5){pong.aiY+=Math.sign(diff)*Math.min(maxAI,Math.abs(diff));}
+  if(pong.playerScore>=pong.maxScore||pong.aiScore>=pong.maxScore){const winner=pong.playerScore>=pong.maxScore?'Toi':'IA';document.getElementById('pong-status').textContent=`${winner} a gagné ! (${pong.playerScore}-${pong.aiScore})`;pongRunning=false;return;}
+  window._pongRAF=requestAnimationFrame(pongLoop);
+}
+
+/* ---------------- SNAKE ---------------- */
+let snake={},snakeRunning=false;
+function initSnake(reset=false){
+  stopAll();
+  const canvas=document.getElementById('snakeCanvas');
+  fitCanvas(canvas,0.9,0.9);
+  const ctx=canvas.getContext('2d');
+
+  if(reset||!snake.initialized){
+    snake={cells:[{x:5,y:5}],dir:'right',nextDir:'right',score:0,food:{x:0,y:0},cellSize:20,rows:Math.floor(canvas.height/20),cols:Math.floor(canvas.width/20),speed:150,initialized:true}; // vitesse réglable ici
+    placeFood();
+  }
+
+  snakeRunning=true;
+  document.getElementById('snake-score').textContent=snake.score;
+
+  document.onkeydown=e=>{
+    if(e.key==='ArrowUp'&&snake.dir!=='down')snake.nextDir='up';
+    if(e.key==='ArrowDown'&&snake.dir!=='up')snake.nextDir='down';
+    if(e.key==='ArrowLeft'&&snake.dir!=='right')snake.nextDir='left';
+    if(e.key==='ArrowRight'&&snake.dir!=='left')snake.nextDir='right';
+  };
+
+  function gameStep(){
+    if(!snakeRunning) return;
+    snake.dir=snake.nextDir;
+    const head={...snake.cells[0]};
+    if(snake.dir==='up') head.y--;
+    if(snake.dir==='down') head.y++;
+    if(snake.dir==='left') head.x--;
+    if(snake.dir==='right') head.x++;
+    if(head.x<0||head.x>=snake.cols||head.y<0||head.y>=snake.rows||snake.cells.some(c=>c.x===head.x&&c.y===head.y)){snakeRunning=false;return;}
+    snake.cells.unshift(head);
+    if(head.x===snake.food.x && head.y===snake.food.y){snake.score++;document.getElementById('snake-score').textContent=snake.score;placeFood();}
+    else snake.cells.pop();
+    ctx.fillStyle='#111';ctx.fillRect(0,0,canvas.width,canvas.height);
+    ctx.fillStyle='#0f0';snake.cells.forEach(c=>ctx.fillRect(c.x*snake.cellSize,c.y*snake.cellSize,snake.cellSize,snake.cellSize));
+    ctx.fillStyle='#f00';ctx.fillRect(snake.food.x*snake.cellSize,snake.food.y*snake.cellSize,snake.cellSize,snake.cellSize);
+  }
+
+  window._snakeInterval=setInterval(gameStep,snake.speed);
+}
+function placeFood(){let x=Math.floor(Math.random()*snake.cols);let y=Math.floor(Math.random()*snake.rows);while(snake.cells.some(c=>c.x===x&&c.y===y)){x=Math.floor(Math.random()*snake.cols);y=Math.floor(Math.random()*snake.rows);}snake.food={x,y};}
+
+/* ---------------- MEMORY ---------------- */
+let memory={};
+function initMemory(reset=false){
+  stopAll();memory={attempts:0,matches:0,first:null,second:null,lock:false};
+  document.getElementById('mem-attempts').textContent=0;document.getElementById('mem-matches').textContent=0;document.getElementById('mem-status').textContent='';
+  const grid=document.getElementById('memoryGrid');grid.innerHTML='';
+  const base=['🍎','🍌','🍇','🍓','🍒','🍑','🍍','🥝','🥥','🍉']; let arr=base.concat(base);arr.sort(()=>Math.random()-0.5);
+  arr.forEach(sym=>{
+    const card=document.createElement('div');card.className='mem-card';card.dataset.sym=sym;card.textContent='';
+    card.onclick=()=>{
+      if(memory.lock||card.textContent!==''||card===memory.first) return;
+      card.textContent=sym;
+      if(!memory.first){memory.first=card;}else{memory.second=card;memory.lock=true;memory.attempts++;document.getElementById('mem-attempts').textContent=memory.attempts;
+        if(memory.first.dataset.sym===memory.second.dataset.sym){memory.matches++;document.getElementById('mem-matches').textContent=memory.matches;memory.first=null;memory.second=null;memory.lock=false;if(memory.matches===10){document.getElementById('mem-status').textContent='🎉 Vous avez gagné !';}}
+        else{setTimeout(()=>{memory.first.textContent='';memory.second.textContent='';memory.first=null;memory.second=null;memory.lock=false;},800);}
+      }
+    };
+    grid.appendChild(card);
+  });
+}
+
+/* ---------------- UTIL FUNCTIONS ---------------- */
+function clamp(v,min,max){return v<min?min:v>max?max:v;}
+function fitCanvas(canvas,w,h){canvas.width=window.innerWidth*w;canvas.height=window.innerHeight*h;}
+</script>
   <h2 style="text-align: center; color: #0099ff; text-shadow: 0 0 10px #0099ff; padding:10px;">
     Notre Mission
   </h2>
  <p>Proposer les meilleurs jeux et application sur toutes les platformes. Ce site un univers de rêve pour chaque Gamers car ici tu peux jouer et aussi téléchager différents jeux et applications. Ici tout est fait pour le confort du gaming </p>
-
   
   <footer>Créé par un passionné de jeux vidéos : <br> <strong style="color:#9900ff;"> {Mlg} </strong>Malonga , <strong style="color: #9900ff;"> {BN}</strong> Brayan </footer>
  
