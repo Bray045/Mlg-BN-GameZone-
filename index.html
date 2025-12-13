@@ -72,46 +72,31 @@
     }
     footer { color: white; text-align: center; }
     .ligne { background: #9900ff; padding: 1px; margin: 15px;}
-    .navbar{ position:sticky; top:0; z-index:999; display:flex; justify-content:center; align-items:center; gap:20px; padding:12px; background:#0a0a1a; border-bottom:1px solid #9900ff; }
-.navbar a, .dropbtn{
-  color:#00f0ff;
-  font-weight:bold;
-  text-decoration:none;
-  cursor:pointer;
-  padding:8px 14px;
-  border-radius:10px;
+    .dropdown-jeux{
+  position: relative;
 }
-.navbar a:hover, .dropbtn:hover{
-  background:#9900ff;
-  color:#000;
-  box-shadow:0 0 15px #9900ff;
+.dropdown-content-jeux{
+  display: none;
+  position: absolute;
+  top: 55px;
+  left: 0;
+  background: #1a0a3a;
+  border-radius: 10px;
+  min-width: 220px;
+  box-shadow: 0 0 20px #9900ff;
+  z-index: 100;
 }
-/* Dropdown */
-.dropdown{
-  position:relative;
+.dropdown-content-jeux a{
+  display: block;
+  padding: 10px;
+  color: #00f0ff;
+  text-decoration: none;
+  font-weight: bold;
 }
-.dropdown-content{
-  display:none;
-  position:absolute;
-  top:45px;
-  left:0;
-  background:#0a0a1a;
-  border:1px solid #9900ff;
-  border-radius:12px;
-  min-width:220px;
-  box-shadow:0 0 20px #9900ff;
-}
-.dropdown-content a{
-  display:block;
-  padding:10px;
-}
-.dropdown:hover .dropdown-content{
-  display:block;
-}
-/* Mobile */
-@media(max-width:768px){
-  .navbar{flex-wrap:wrap;}
-  .dropdown-content{position:static; box-shadow:none;}
+
+.dropdown-content-jeux a:hover{
+  background: #9900ff;
+  color: black;
 }
   </style>
 </head>
@@ -156,12 +141,14 @@
     <a href="android.html" class="bouton">Jeux</a>
     <a href="application.html" class="bouton">Application</a>
   </div>
+ 
+  <div class="bouton-cadre">
+  <a href="jeux.html" class="bouton">Jouer online</a>
 
- <div class="bouton-cadre">
-
-  <div class="dropdown">
-    <span class="dropbtn">🎮 Jeux ▾</span>
-    <div class="dropdown-content">
+  <!-- Bouton Jeux avec menu -->
+  <div class="dropdown-jeux">
+    <div class="bouton" onclick="toggleJeux()">Jeux ▾</div>
+    <div class="dropdown-content-jeux" id="menuJeux">
       <a href="mobile.html">📱 Jeux Mobile (Android & iOS)</a>
       <a href="pc.html">🖥️ Jeux PC</a>
       <a href="ppsspp.html">🎮 Jeux PPSSPP</a>
@@ -169,8 +156,22 @@
     </div>
   </div>
 
-  <a href="application.html">📲 Application</a>
-</nav>
+  <a href="application.html" class="bouton">Application</a>
+</div>
+
+ <script>
+function toggleJeux(){
+  const menu = document.getElementById("menuJeux");
+  menu.style.display = (menu.style.display === "block") ? "none" : "block";
+}
+
+// Fermer si on clique ailleurs
+document.addEventListener("click", function(e){
+  if(!e.target.closest(".dropdown-jeux")){
+    document.getElementById("menuJeux").style.display = "none";
+  }
+});
+</script>
 
 
   <h2 style="text-align: center; color: #0099ff; text-shadow: 0 0 10px #0099ff; padding:10px;">
