@@ -382,19 +382,29 @@ function fitCanvas(canvas,w,h){canvas.width=window.innerWidth*w;canvas.height=wi
 
 <!-- VIGNETTES DES JEUX -->
 <div class="game-cadre">
+ <div class="game" onclick="openIframeGame(6)">
+    <img src="https://business.gamezop.com/img/gamezop/p7HOjYF4O/cover.jpg?w=300&q=50" alt="Rampage Racer">
+    <div class="game-titre"> Rampage Racer</div>
+  </div>
+ 
+<div class="game" onclick="openIframeGame(3)">
+    <img src="https://business.gamezop.com/img/gamezop/Skz4pzkDqyX/cover.jpg?w=300&q=50" alt="Escape Run">
+    <div class="game-titre">Escape Run</div>
+</div>
+ 
   <div class="game" onclick="openIframeGame(1)">
     <img src="https://business.gamezop.com/img/gamezop/SkhljT2fdgb/cover.jpg?w=300&q=50" alt="Ludo avec des amis">
     <div class="game-titre">Ludo avec des amis</div>
   </div>
 
+ <div class="game" onclick="openIframeGame(7)">
+    <img src="https://business.gamezop.com/img/gamezop/BkdJhTX50B/cover.jpg?w=300&q=50" alt="Stars du bowling">
+    <div class="game-titre"> Stars du bowling</div>
+  </div>
+ 
   <div class="game" onclick="openIframeGame(2)">
     <img src="https://business.gamezop.com/img/gamezop/rkPlk2T7qAr/cover.jpg?w=300&q=50" alt="Solitaire Gold">
     <div class="game-titre">Solitaire Gold</div>
-  </div>
-
-  <div class="game" onclick="openIframeGame(3)">
-    <img src="https://business.gamezop.com/img/gamezop/Skz4pzkDqyX/cover.jpg?w=300&q=50" alt="Escape Run">
-    <div class="game-titre">Escape Run</div>
   </div>
 
   <div class="game" onclick="openIframeGame(4)">
@@ -442,7 +452,9 @@ const iframeLinks = {
   2: "https://zv1y2i8p.play.gamezop.com/g/rkPlk2T7qAr",
   3: "https://zv1y2i8p.play.gamezop.com/g/Skz4pzkDqyX",
   4: "https://zv1y2i8p.play.gamezop.com/g/XuSI73Wi5",
-  5: "https://zv1y2i8p.play.gamezop.com/g/hgempP8Sc"
+  5: "https://zv1y2i8p.play.gamezop.com/g/hgempP8Sc",
+  6: "https://zv1y2i8p.play.gamezop.com/g/p7HOjYF4O",
+  7: "https://zv1y2i8p.play.gamezop.com/g/BkdJhTX50B"
 };
 
 function openIframeGame(id) {
