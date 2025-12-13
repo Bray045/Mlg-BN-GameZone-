@@ -72,6 +72,47 @@
     }
     footer { color: white; text-align: center; }
     .ligne { background: #9900ff; padding: 1px; margin: 15px;}
+    .navbar{ position:sticky; top:0; z-index:999; display:flex; justify-content:center; align-items:center; gap:20px; padding:12px; background:#0a0a1a; border-bottom:1px solid #9900ff; }
+.navbar a, .dropbtn{
+  color:#00f0ff;
+  font-weight:bold;
+  text-decoration:none;
+  cursor:pointer;
+  padding:8px 14px;
+  border-radius:10px;
+}
+.navbar a:hover, .dropbtn:hover{
+  background:#9900ff;
+  color:#000;
+  box-shadow:0 0 15px #9900ff;
+}
+/* Dropdown */
+.dropdown{
+  position:relative;
+}
+.dropdown-content{
+  display:none;
+  position:absolute;
+  top:45px;
+  left:0;
+  background:#0a0a1a;
+  border:1px solid #9900ff;
+  border-radius:12px;
+  min-width:220px;
+  box-shadow:0 0 20px #9900ff;
+}
+.dropdown-content a{
+  display:block;
+  padding:10px;
+}
+.dropdown:hover .dropdown-content{
+  display:block;
+}
+/* Mobile */
+@media(max-width:768px){
+  .navbar{flex-wrap:wrap;}
+  .dropdown-content{position:static; box-shadow:none;}
+}
   </style>
 </head>
 <body>
@@ -115,6 +156,22 @@
     <a href="android.html" class="bouton">Jeux</a>
     <a href="application.html" class="bouton">Application</a>
   </div>
+
+ <nav class="navbar">
+
+  <div class="dropdown">
+    <span class="dropbtn">🎮 Jeux ▾</span>
+    <div class="dropdown-content">
+      <a href="mobile.html">📱 Jeux Mobile (Android & iOS)</a>
+      <a href="pc.html">🖥️ Jeux PC</a>
+      <a href="ppsspp.html">🎮 Jeux PPSSPP</a>
+      <a href="ds.html">🕹️ Jeux Nintendo DS</a>
+    </div>
+  </div>
+
+  <a href="application.html">📲 Application</a>
+</nav>
+
 
   <h2 style="text-align: center; color: #0099ff; text-shadow: 0 0 10px #0099ff; padding:10px;">
     Mini jeux
